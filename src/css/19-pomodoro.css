@@ -1,0 +1,160 @@
+/* Focus setup + Pomodoro, one consistent visual system.
+   Rules used here (keep them if you extend this screen):
+   - Two radii only: 8px for small controls (chips, inputs, buttons), 12px for containers.
+   - One label style: 12.5px sans, weight 600, sentence case. Monospace is kept for numbers only.
+   - One surface per level: page > card (--surf) > field (--surf2). No stacked borders, no left accent bars.
+   - Selected state = amber text + amber border + amber tint, everywhere.            */
+
+#view-focus-setup{--fs-r-sm:8px;--fs-r-lg:12px;--fs-field-h:42px}
+
+/* labels */
+#view-focus-setup .field-lbl,
+#view-focus-setup .pomo-label{
+  font-family:var(--sans);font-size:12.5px;font-weight:600;letter-spacing:0;text-transform:none;
+  color:var(--muted2);margin:0 0 7px;white-space:normal;overflow:visible;text-overflow:clip}
+#view-focus-setup .field-lbl .fs-hint{font-weight:400;color:var(--muted);margin-left:6px}
+#view-focus-setup .fs-tagline{margin-bottom:28px}
+#view-focus-setup .field{margin-bottom:20px}
+#view-focus-setup .field-input{border-radius:var(--fs-r-sm);min-height:var(--fs-field-h);padding:10px 14px;background:var(--surf)}
+#view-focus-setup .dur-head{align-items:center;margin-bottom:8px}
+#view-focus-setup .dur-head .field-lbl{margin:0}
+#view-focus-setup .dur-edit{font:600 12.5px var(--sans);color:var(--muted2);padding:2px 4px;border-radius:4px;text-decoration:none}
+#view-focus-setup .dur-edit:hover{color:var(--amber);text-decoration:none}
+
+/* session mode: segmented control */
+#view-focus-setup .mode-row{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding:4px;margin:0 0 22px;
+  background:var(--surf2);border:1px solid var(--bdr);border-radius:var(--fs-r-lg)}
+#view-focus-setup .mode-opt{
+  -webkit-appearance:none;appearance:none;border:1px solid transparent;border-radius:var(--fs-r-sm);background:transparent;
+  display:flex;flex-direction:column;align-items:center;gap:2px;padding:9px 6px;
+  font-family:var(--sans);font-size:14px;font-weight:600;letter-spacing:0;text-transform:none;color:var(--txt2);cursor:pointer;
+  transition:background var(--dur-fast),color var(--dur-fast),border-color var(--dur-fast)}
+#view-focus-setup .mode-opt small{font-size:11.5px;font-weight:400;letter-spacing:0;color:var(--muted)}
+#view-focus-setup .mode-opt:hover{background:var(--amber-04);color:var(--txt)}
+#view-focus-setup .mode-opt.on{background:var(--surf);border-color:var(--amber);color:var(--amber);box-shadow:0 1px 3px rgba(0,0,0,.10)}
+#view-focus-setup .mode-opt.on small{color:var(--muted2)}
+#view-focus-setup .mode-opt:focus-visible{outline:2px solid var(--amber);outline-offset:1px}
+
+/* preset chips (free block + pomodoro share them) */
+#view-focus-setup .presets,#view-focus-setup .pomo-presets{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+#view-focus-setup .preset-chip{
+  border-radius:var(--fs-r-sm);padding:0;background:var(--surf);border:1px solid var(--bdr2);box-shadow:none;
+  transition:border-color var(--dur-fast),background var(--dur-fast)}
+#view-focus-setup .preset-chip:hover{border-color:var(--amber);background:var(--amber-04)}
+#view-focus-setup .preset-chip:has(>.preset.on),
+#view-focus-setup .preset-chip:has(>.pomo-preset-btn.active){background:var(--amber-lo);border-color:var(--amber);box-shadow:none}
+#view-focus-setup .preset-chip>.preset,
+#view-focus-setup .preset-chip>.pomo-preset-btn,
+#view-focus-setup .presets .dur-pill>.preset,
+#view-focus-setup .pomo-presets .dur-pill>.pomo-preset-btn{
+  font:500 13.5px var(--sans);padding:7px 13px;border-radius:var(--fs-r-sm);color:var(--txt2);font-variant-numeric:tabular-nums}
+#view-focus-setup .preset-chip>.preset.on,
+#view-focus-setup .preset-chip>.pomo-preset-btn.active{color:var(--amber);font-weight:600}
+#view-focus-setup .dur-custom{font-style:normal}
+#view-focus-setup .preset-chip>.chip-x{width:24px;height:24px;margin:0 3px 0 -6px;border-radius:6px}
+#view-focus-setup .preset-empty{font:400 13px var(--sans);letter-spacing:0;text-transform:none;color:var(--muted)}
+
+/* pomodoro card */
+#view-focus-setup .pomo-cfg.visible{
+  background:var(--surf);border:1px solid var(--bdr2);border-radius:var(--fs-r-lg);padding:16px;margin-bottom:12px}
+#view-focus-setup .pomo-cfg .dur-head{margin-bottom:10px}
+#view-focus-setup .pomo-tools{gap:12px}
+
+/* classic / custom switch: same segmented language as the mode row, one size smaller */
+#view-focus-setup .pomo-sub-row{
+  display:grid;grid-template-columns:1fr 1fr;gap:3px;padding:3px;margin:0 0 16px;
+  background:var(--surf2);border:1px solid var(--bdr);border-radius:10px}
+#view-focus-setup .pomo-sub{
+  border:1px solid transparent;border-radius:7px;background:transparent;padding:7px 8px;
+  font:600 13px var(--sans);letter-spacing:0;text-transform:none;color:var(--txt2);cursor:pointer;
+  transition:background var(--dur-fast),color var(--dur-fast)}
+#view-focus-setup .pomo-sub:hover{color:var(--txt)}
+#view-focus-setup .pomo-sub.on{background:var(--surf);border-color:var(--amber);color:var(--amber)}
+#view-focus-setup .pomo-sub:focus-visible{outline:2px solid var(--amber);outline-offset:1px}
+
+/* number fields with a unit inside */
+#view-focus-setup .pomo-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+#view-focus-setup .pomo-field{display:flex;flex-direction:column;gap:0;min-width:0}
+#view-focus-setup .num-wrap{position:relative;display:block}
+#view-focus-setup .num-wrap .num-in{
+  width:100%;box-sizing:border-box;height:var(--fs-field-h);padding:0 38px 0 12px;text-align:left;
+  background:var(--surf2);border:1px solid var(--bdr);border-radius:var(--fs-r-sm);
+  font:500 16px var(--mono);font-variant-numeric:tabular-nums;color:var(--txt)}
+#view-focus-setup .num-wrap .num-in:focus{border-color:var(--amber);box-shadow:0 0 0 3px var(--amber-lo)}
+#view-focus-setup .num-wrap .unit{
+  position:absolute;right:11px;top:50%;transform:translateY(-50%);pointer-events:none;
+  font:400 12px var(--sans);color:var(--muted)}
+#view-focus-setup .num-wrap.wide .num-in{padding-right:50px}
+
+/* custom sequence rows: neutral card, colour only on the block type */
+#view-focus-setup .seq-hint{font:400 12.5px/1.45 var(--sans);color:var(--muted2);margin:0 0 10px}
+#view-focus-setup .seq-list{gap:6px;margin-bottom:10px}
+#view-focus-setup .seq-row{
+  display:flex;align-items:center;gap:8px;padding:6px 8px;
+  background:var(--surf2);border:1px solid var(--bdr);border-left:1px solid var(--bdr);border-radius:10px}
+#view-focus-setup .seq-n{font:500 12px var(--mono);color:var(--muted);min-width:14px;text-align:center}
+#view-focus-setup .seq-type{
+  width:68px;padding:6px 0;border-radius:6px;border:1px solid currentColor;background:transparent;
+  font:600 11.5px var(--sans);letter-spacing:.04em;text-transform:uppercase}
+#view-focus-setup .seq-row.w .seq-type{color:var(--amber)}
+#view-focus-setup .seq-row.b .seq-type{color:var(--green)}
+#view-focus-setup .seq-min{width:64px;height:34px;padding:0 8px;font:500 15px var(--mono);border-radius:6px;background:var(--surf);border:1px solid var(--bdr)}
+#view-focus-setup .seq-unit{font:400 12px var(--sans);letter-spacing:0;text-transform:none;color:var(--muted)}
+#view-focus-setup .seq-ic{width:30px;height:30px;border-radius:6px;border:1px solid var(--bdr);background:transparent;font-family:var(--sans)}
+#view-focus-setup .seq-actions{display:flex;gap:8px;flex-wrap:wrap}
+
+/* secondary buttons (save preset, +work, +break, clear) */
+#view-focus-setup .btn-save-preset{
+  border:1px solid var(--bdr2);border-style:solid;border-radius:var(--fs-r-sm);background:transparent;
+  font:600 13px var(--sans);letter-spacing:0;text-transform:none;color:var(--txt2);padding:7px 12px;cursor:pointer;
+  transition:border-color var(--dur-fast),color var(--dur-fast),background var(--dur-fast)}
+#view-focus-setup .btn-save-preset:hover{border-color:var(--amber);color:var(--amber);background:var(--amber-lo)}
+#view-focus-setup #pomo-save::before,#view-focus-setup #dur-save::before{content:"+";font-weight:700;margin-right:6px}
+#view-focus-setup .pomo-save-row{display:flex;justify-content:flex-end;margin-top:14px;padding-top:14px;border-top:1px solid var(--bdr)}
+#view-focus-setup #custom-row{
+  display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:0 0 14px;padding:12px;
+  background:var(--surf);border:1px solid var(--bdr2);border-radius:var(--fs-r-lg)}
+#view-focus-setup #custom-row[hidden]{display:none}
+#view-focus-setup #custom-row label{font:400 13px var(--sans);letter-spacing:0;text-transform:none;color:var(--muted2)}
+#view-focus-setup #custom-row .num-in{width:64px;height:36px;border-radius:6px;background:var(--surf2);border:1px solid var(--bdr);font:500 15px var(--mono)}
+
+/* summary: three plain figures instead of one line of monospace caps */
+#view-focus-setup .pomo-total-preview{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(0,1fr));gap:0;margin:0 0 4px;padding:0;
+  background:var(--surf);border:1px solid var(--bdr2);border-left:1px solid var(--bdr2);border-radius:var(--fs-r-lg);
+  font:inherit;letter-spacing:0;text-transform:none;color:inherit}
+#view-focus-setup .pomo-total-preview:empty{display:none}
+#view-focus-setup .tp-cell{display:flex;flex-direction:column;gap:2px;padding:11px 14px;min-width:0}
+#view-focus-setup .tp-cell+.tp-cell{border-left:1px solid var(--bdr)}
+#view-focus-setup .tp-cell span{font:600 12px var(--sans);color:var(--muted)}
+#view-focus-setup .tp-cell b{font:600 18px var(--sans);color:var(--txt);font-variant-numeric:tabular-nums;white-space:nowrap}
+#view-focus-setup .tp-cell.end b{color:var(--amber)}
+#view-focus-setup .divider{margin:22px 0;background:var(--bdr)}
+
+/* lifetime stats */
+#view-focus-setup .stats-row{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin:0 0 22px;background:var(--surf);
+  border:1px solid var(--bdr2);border-radius:var(--fs-r-lg);overflow:hidden}
+#view-focus-setup .stat-cell{padding:12px 8px;border-right:0;text-align:center}
+#view-focus-setup .stat-cell+.stat-cell{border-left:1px solid var(--bdr)}
+#view-focus-setup .stat-cell-lbl{font:600 12px var(--sans);letter-spacing:0;text-transform:none;color:var(--muted);margin-bottom:3px}
+#view-focus-setup .stat-cell-val{font:600 18px var(--sans);font-variant-numeric:tabular-nums}
+
+/* actions */
+#view-focus-setup .btn-primary{border-radius:var(--fs-r-lg);font-size:19px;letter-spacing:3px;padding:16px}
+#view-focus-setup .btn-ghost{border-radius:var(--fs-r-lg)}
+
+@media (max-width:520px){
+  #view-focus-setup .pomo-row{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #view-focus-setup .pomo-cfg.visible{padding:14px}
+  #view-focus-setup .tp-cell{padding:10px 10px}
+  #view-focus-setup .tp-cell b{font-size:16px}
+  #view-focus-setup .stats-row{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #view-focus-setup .stat-cell:nth-child(3){border-left:0}
+  #view-focus-setup .stat-cell:nth-child(n+3){border-top:1px solid var(--bdr)}
+}
+@media (prefers-reduced-motion:reduce){#view-focus-setup *{transition:none!important}}
+
+/* one focus ring, not two */
+#view-focus-setup .num-in:focus,#view-focus-setup .seq-min:focus{outline:none;border-color:var(--amber);box-shadow:0 0 0 3px var(--amber-lo)}

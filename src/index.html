@@ -1,0 +1,1704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>BLOC — Master Your Day</title>
+<meta name="description" content="BLOC is a free daily planner that keeps tasks, focus blocks, habits and your calendar in one place. Free during the early-access beta."/>
+<meta name="theme-color" content="#0b0a08"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://yitbloc.site/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="BLOC"/>
+<meta property="og:title" content="BLOC — Master Your Day"/>
+<meta property="og:description" content="Tasks, focus blocks, habits and a calendar in one free daily planner."/>
+<meta property="og:url" content="https://yitbloc.site/"/>
+<meta property="og:image" content="https://yitbloc.site/og.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="BLOC logo on a dark background with the line Master your day"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="BLOC — Master Your Day"/>
+<meta name="twitter:description" content="Tasks, focus blocks, habits and a calendar in one free daily planner."/>
+<meta name="twitter:image" content="https://yitbloc.site/og.png"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"BLOC","url":"https://yitbloc.site/","description":"A daily planner with tasks, focus blocks, habits and a calendar.","applicationCategory":"ProductivityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<link rel="icon" id="page-favicon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&family=Libre+Baskerville:ital@0;1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/assets/app.css"/>
+<script defer src="/assets/analytics-init.js"></script>
+<script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+<noscript>BLOC needs JavaScript to run. Please enable it in your browser settings.</noscript>
+<div id="beta-banner" role="region" aria-label="Early access notice">
+  <span><strong>Early Access Beta:</strong> This application is completely free during our initial testing phase. Early users get 50% off for life when premium tiers launch. <button type="button" class="beta-claim" onclick="claimFounding()">Claim your spot</button></span>
+  <button type="button" class="beta-x" id="beta-x" aria-label="Dismiss early access banner"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+</div>
+<script src="/assets/beta-banner.js"></script>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol><symbol id="i-scissors" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol><symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol><symbol id="i-sunrise" viewBox="0 0 24 24"><path d="M12 2v8M4.93 10.93l1.41 1.41M2 18h2M20 18h2M19.07 10.93l-1.41 1.41M22 22H2M8 6l4-4 4 4M16 18a4 4 0 0 0-8 0"/></symbol><symbol id="i-sunset" viewBox="0 0 24 24"><path d="M12 10V2M4.93 10.93l1.41 1.41M2 18h2M20 18h2M19.07 10.93l-1.41 1.41M22 22H2M16 5l-4 4-4-4M16 18a4 4 0 0 0-8 0"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol><symbol id="i-volume" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14"/></symbol><symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3Z"/><path d="M19 16l.7 1.8 1.8.7-1.8.7L19 21l-.7-1.8-1.8-.7 1.8-.7z"/></symbol><symbol id="i-sliders" viewBox="0 0 24 24"><path d="M3 6h9M16 6h5M3 12h3M10 12h11M3 18h11M18 18h3"/><circle cx="14" cy="6" r="2"/><circle cx="8" cy="12" r="2"/><circle cx="16" cy="18" r="2"/></symbol><symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 3c1 3 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-6 1-9Z"/></symbol><symbol id="i-timer" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M9 2h6"/></symbol><symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol><symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></symbol><symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3 2 20h20L12 3Z"/><path d="M12 10v4M12 17.5v.01"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></symbol><symbol id="i-edit" viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></symbol><symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0"/></symbol><symbol id="i-pause" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></symbol><symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 2-.9 2-2 0-.5-.2-1-.5-1.3-.3-.4-.5-.8-.5-1.3 0-1.1.9-2 2-2H17a4 4 0 0 0 4-4c0-4.4-4-8-9-8Z"/><circle cx="7.5" cy="11" r=".8"/><circle cx="10" cy="7" r=".8"/><circle cx="15" cy="7" r=".8"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol><symbol id="i-sprout" viewBox="0 0 24 24"><path d="M7 20h10M10 20c5.5-2.5.8-6.4 3-10M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8ZM14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2Z"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></symbol><symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M5 7h14M5 7l-3 8a4 3 0 0 0 6 0ZM19 7l-3 8a4 3 0 0 0 6 0ZM8 21h8"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14Z"/><path d="M20 17v4H6.5a2.5 2.5 0 0 1 0-5"/></symbol><symbol id="i-save" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z"/><path d="M17 21v-8H7v8M7 3v5h8"/></symbol><symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></symbol><symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 15V3M7 8l5-5 5 5M5 21h14"/></symbol><symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="1.5"/><path d="M21 15l-5-5L5 21"/></symbol><symbol id="i-key" viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="4.5"/><path d="M10.7 12.3 21 2M16 7l3 3"/></symbol><symbol id="i-cloud" viewBox="0 0 24 24"><path d="M17.5 19H7a5 5 0 1 1 1-9.9A6 6 0 0 1 19.5 12a3.5 3.5 0 0 1-2 7Z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></symbol><symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0ZM17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></symbol><symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 21V10M10 21V4M16 21v-8M22 21H2"/></symbol><symbol id="i-trend-down" viewBox="0 0 24 24"><path d="m22 17-8.5-8.5-5 5L2 7"/><path d="M16 17h6v-6"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol><symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.8 2.8L16 9.5"/></symbol><symbol id="i-hourglass" viewBox="0 0 24 24"><path d="M5 22h14M5 2h14M17 22v-4.17a2 2 0 0 0-.59-1.41L12 12l-4.41 4.42A2 2 0 0 0 7 17.83V22M7 2v4.17a2 2 0 0 0 .59 1.41L12 12l4.41-4.42A2 2 0 0 0 17 6.17V2"/></symbol><symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-1.8 5.41a2 2 0 0 1-1.27 1.27L7.76 16.24l1.8-5.41a2 2 0 0 1 1.27-1.27Z"/></symbol><symbol id="i-repeat" viewBox="0 0 24 24"><path d="m17 2 4 4-4 4M3 11v-1a4 4 0 0 1 4-4h14M7 22l-4-4 4-4M21 13v1a4 4 0 0 1-4 4H3"/></symbol><symbol id="i-battery" viewBox="0 0 24 24"><rect x="2" y="7" width="16" height="10" rx="2"/><path d="M22 11v2M6 12h6"/></symbol><symbol id="i-battery-low" viewBox="0 0 24 24"><rect x="2" y="7" width="16" height="10" rx="2"/><path d="M22 11v2M6 11v2"/></symbol><symbol id="i-graduation" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5ZM6 12v5c3 3 9 3 12 0v-5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M12 18h.01"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol><symbol id="i-hand" viewBox="0 0 24 24"><path d="M18 11V6a2 2 0 0 0-4 0M14 10V4a2 2 0 0 0-4 0v2M10 10.5V6a2 2 0 0 0-4 0v8M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.9-5.9-2.4L3.4 16a2 2 0 0 1 3.2-2.4L8 15"/></symbol><symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2ZM9 22V12h6v10"/></symbol><symbol id="i-contrast" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20Z"/></symbol><symbol id="i-shuffle" viewBox="0 0 24 24"><path d="M2 18h1.4c1.3 0 2.5-.6 3.3-1.7l6.1-8.6c.7-1.1 2-1.7 3.3-1.7H22M18 2l4 4-4 4M2 6h1.9c1.5 0 2.9.9 3.6 2.2M22 18h-5.9c-1.3 0-2.6-.7-3.3-1.8l-.5-.8M18 14l4 4-4 4"/></symbol><symbol id="i-gem" viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 13L2 9ZM11 3 8 9l4 13 4-13-3-6M2 9h20"/></symbol><symbol id="i-mountain" viewBox="0 0 24 24"><path d="m8 3 4 8 5-5 5 15H2L8 3Z"/></symbol><symbol id="i-bookmark" viewBox="0 0 24 24"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16Z"/></symbol></defs></svg>
+
+<div id="welcome-overlay">
+  <div class="welcome-modal">
+    <div class="welcome-icon" id="welcome-icon"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sunrise"/></svg></div>
+    <div class="welcome-date" id="welcome-date">—</div>
+    <div class="welcome-text" id="welcome-text">Welcome back.</div>
+    <div class="welcome-actions">
+      <button class="welcome-speak" id="welcome-speak-btn" onclick="replayGreeting()" title="Hear the greeting" aria-label="Replay greeting audio"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-volume"/></svg> </button>
+      <button class="welcome-go" onclick="dismissWelcome()">LET'S GO →</button>
+    </div>
+    <button type="button" class="welcome-founding" onclick="claimFounding()">Early access: free now, 50% off for life. Create an account to claim it →</button>
+    <div class="welcome-energy">
+      <div class="we-lbl">Optional: how's your energy today?</div>
+      <div class="we-row">
+        <button class="energy-btn" data-v="1" onclick="logEnergy(1);uxPickEnergy(this)">1</button>
+        <button class="energy-btn" data-v="2" onclick="logEnergy(2);uxPickEnergy(this)">2</button>
+        <button class="energy-btn" data-v="3" onclick="logEnergy(3);uxPickEnergy(this)">3</button>
+        <button class="energy-btn" data-v="4" onclick="logEnergy(4);uxPickEnergy(this)">4</button>
+        <button class="energy-btn" data-v="5" onclick="logEnergy(5);uxPickEnergy(this)">5</button>
+      </div>
+      <div class="energy-scale-lbl"><span>Running on empty</span><span>Fully charged</span></div>
+    </div>
+  </div>
+</div>
+
+<div id="energy-overlay">
+  <div class="energy-modal">
+    <div class="energy-modal-title">ENERGY CHECK-IN</div>
+    <div class="energy-modal-sub">No wrong answer — this only changes what BLOC shows you, not how it judges you.</div>
+    <div class="we-row" style="margin:20px 0 6px;">
+      <button class="energy-btn" data-v="1" onclick="logEnergy(1);closeEnergyModal()">1</button>
+      <button class="energy-btn" data-v="2" onclick="logEnergy(2);closeEnergyModal()">2</button>
+      <button class="energy-btn" data-v="3" onclick="logEnergy(3);closeEnergyModal()">3</button>
+      <button class="energy-btn" data-v="4" onclick="logEnergy(4);closeEnergyModal()">4</button>
+      <button class="energy-btn" data-v="5" onclick="logEnergy(5);closeEnergyModal()">5</button>
+    </div>
+    <div class="energy-scale-lbl"><span>Running on empty</span><span>Fully charged</span></div>
+    <button type="button" class="energy-low-btn" id="le-toggle-btn" onclick="toggleLowEnergyMode();closeEnergyModal()">Rough day? Show only my one top task</button>
+    <div class="backfill-btns"><button class="est-cancel" onclick="closeEnergyModal()" style="width:100%">CLOSE</button></div>
+  </div>
+</div>
+
+<div id="backfill-overlay">
+  <div class="backfill-modal">
+    <div class="backfill-title">BACKFILL A DAY</div>
+    <div class="backfill-sub">This happened, you just didn't log it in the moment — that's fine. No exact times needed.</div>
+    <div class="backfill-field" style="margin-top:16px;">
+      <label>Which day?</label>
+      <input type="date" id="backfill-date-input" onchange="onBackfillDateChange()">
+    </div>
+    <div class="backfill-hint">Roughly how much happened?</div>
+    <div class="backfill-chips">
+      <button class="backfill-chip" onclick="confirmBackfill('h1')">~1 HOUR</button>
+      <button class="backfill-chip" onclick="confirmBackfill('h2')">~2 HOURS</button>
+      <button class="backfill-chip" onclick="confirmBackfill('half')">~HALF DAY</button>
+      <button class="backfill-chip" onclick="confirmBackfill('untracked')">PRODUCTIVE — JUST UNTRACKED</button>
+    </div>
+    <div class="backfill-btns"><button class="est-cancel" onclick="closeBackfill()" style="width:100%">CANCEL</button></div>
+  </div>
+</div>
+
+<div class="zen-banner">ZEN MODE — PRESS Z OR ESC TO EXIT</div>
+<div class="zen-subject" id="zen-subject-lbl"></div>
+
+
+<div id="quick-capture">
+  <div class="qc-wrap">
+    <div class="qc-label"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-bolt"/></svg> QUICK CAPTURE — ADD TASK</div>
+    <div class="qc-row">
+      <input class="qc-input" id="qc-input" placeholder="What needs to happen?"
+        onkeydown="qcKeydown(event)">
+      <select class="qc-type" id="qc-type">
+        <option value="A">A</option>
+        <option value="B" selected>B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+        <option value="E">E</option>
+      </select>
+    </div>
+    <div class="qc-hint"><kbd style="background:var(--surf2);border:1px solid var(--bdr2);padding:1px 6px;font-family:var(--mono);font-size:10px">ENTER</kbd> add &nbsp; <kbd style="background:var(--surf2);border:1px solid var(--bdr2);padding:1px 6px;font-family:var(--mono);font-size:10px">ESC</kbd> close</div>
+  </div>
+</div>
+
+
+<div id="reflection-overlay">
+  <div class="reflect-modal">
+    <div class="reflect-title">END OF DAY</div>
+    <div class="reflect-sub" id="reflect-date-sub">—</div>
+    <div class="reflect-field">
+      <div class="reflect-lbl">What did you accomplish today?</div>
+      <textarea class="reflect-ta" id="reflect-wins" placeholder="Wins, completions, breakthroughs…"></textarea>
+    </div>
+    <div class="reflect-field">
+      <div class="reflect-lbl">What got in the way?</div>
+      <textarea class="reflect-ta" id="reflect-blocks" placeholder="Distractions, obstacles, avoidance…"></textarea>
+    </div>
+    <div class="reflect-score">
+      <div class="reflect-score-lbl">Day rating:</div>
+      <span class="score-star" data-v="1">★</span>
+      <span class="score-star" data-v="2">★</span>
+      <span class="score-star" data-v="3">★</span>
+      <span class="score-star" data-v="4">★</span>
+      <span class="score-star" data-v="5">★</span>
+    </div>
+    <div class="reflect-field">
+      <div class="reflect-lbl">Anything happen today that BLOC didn't catch?</div>
+      <div class="backfill-chips">
+        <button class="backfill-chip" onclick="reflectBackfillToday('h1')">About 1 hour untracked</button>
+        <button class="backfill-chip" onclick="reflectBackfillToday('h2')">About 2 hours untracked</button>
+        <button class="backfill-chip" onclick="reflectBackfillToday('untracked')">Something small</button>
+      </div>
+    </div>
+    <div class="reflect-field" style="display:flex;align-items:center;gap:8px;">
+      <input type="checkbox" id="reflect-rest-day" style="width:16px;height:16px;">
+      <label for="reflect-rest-day" style="font-size:11px;color:var(--txt2);cursor:pointer;">This was a rest day — don't count it against my streak or trend</label>
+    </div>
+    <div class="reflect-btns">
+      <button class="est-cancel" onclick="closeReflection()">Skip</button>
+      <button class="est-confirm" onclick="saveReflection()" >Save reflection →</button>
+    </div>
+  </div>
+</div>
+
+
+<div id="habits-onboard-overlay">
+  <div class="hob-modal">
+    <div class="hob-title">BUILD A HABIT</div>
+    <div class="hob-sub">Start with one small thing. Next you’ll pick a cue, a tiny version and a celebration — about 30 seconds. Small and honest beats ambitious and abandoned.</div>
+    <div class="hob-add-row">
+      <input type="text" class="hob-input" id="hob-input" placeholder="e.g. Morning walk, Read 10 pages…" maxlength="60"
+        onkeydown="if(event.key==='Enter'){addHabitFromOnboarding();}">
+      <select class="hob-freq-sel" id="hob-freq">
+        <option value="daily">Daily</option>
+        <option value="weekly">Weekly</option>
+      </select>
+      <button class="hob-add-btn" onclick="addHabitFromOnboarding()">BUILD IT</button>
+    </div>
+    <div class="hob-list" id="hob-list"></div>
+    <div class="hob-btns">
+      <button class="est-confirm" onclick="closeHabitsOnboarding()" style="width:100%">DONE →</button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="habit-history-overlay">
+  <div class="hh-modal">
+    <button class="hh-close" onclick="closeHabitHistory()" title="Close">✕</button>
+    <div class="hh-hdr">
+      <div>
+        <div class="hh-title" id="hh-title">—</div>
+        <span class="hh-freq-badge" id="hh-freq">DAILY</span>
+      </div>
+      <div class="hh-range-tog">
+        <button class="hh-range-btn" data-range="3m" onclick="setHabitHistRange('3m')">3M</button>
+        <button class="hh-range-btn" data-range="6m" onclick="setHabitHistRange('6m')">6M</button>
+        <button class="hh-range-btn" data-range="1y" onclick="setHabitHistRange('1y')">1Y</button>
+      </div>
+    </div>
+    <div class="hh-stats-row" id="hh-stats"></div>
+    <div class="hh-section-lbl">Full history</div>
+    <div id="hh-heatmap"></div>
+    <div id="hh-monthly"></div>
+  </div>
+</div>
+
+<div class="panel-backdrop" id="rulebook-backdrop" onclick="closeRulebook()"></div>
+<div class="side-panel" id="rulebook-panel" role="dialog" aria-label="A to E rulebook">
+  <div class="panel-close" onclick="closeRulebook()">✕ CLOSE</div>
+  <h2 class="panel-title">RULEBOOK</h2>
+  <div class="panel-sub">How to decide what to do first · the A–E method</div>
+  <div class="rb-tabs" id="rb-tabs" role="tablist"></div>
+  <div class="rb-body" id="rb-body"></div>
+</div>
+
+<header class="hdr">
+  <div style="display:flex;align-items:center;gap:12px;flex-shrink:0;">
+    <div class="logo">
+      <span class="logo-mark-slot" id="logo-mark-slot">
+        <svg class="logo-mark" viewBox="0 0 36 36" width="30" height="30" aria-hidden="true">
+          <path class="logo-stem" d="M8 5H12V31H8a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" fill="var(--amber)"/>
+          <path class="logo-a" d="M14.5 5H21a5.5 5.5 0 0 1 0 11H14.5Z" fill="var(--amber)"/>
+          <path class="logo-b" d="M14.5 18H23a6.5 6.5 0 0 1 0 13H14.5Z" fill="var(--amber)" fill-opacity=".55"/>
+        </svg>
+      </span>
+      <div class="logo-text">
+        <h1 class="logo-word" id="logo-word-txt">BLOC</h1>
+        <em id="logo-tagline-txt">MASTER YOUR DAY</em>
+      </div>
+    </div>
+    <div class="streak-badge cold" id="streak-badge" title="Daily streak">
+      <svg class="ic streak-fire" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+      <span id="streak-num">0</span> day
+    </div>
+    <div class="trophy-badge" id="trophy-badge" title=""></div>
+  </div>
+  <div class="hdr-right">
+  <nav class="hdr-nav" id="hdr-nav">
+    <button class="nav-btn active" id="nav-tasks" data-navkey="tasks" draggable="true" onclick="showView('tasks')" title="Tasks: add and tick off today’s to-dos">
+      <svg class="nav-ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="4.5" width="14" height="16.5" rx="2.5" fill="currentColor" fill-opacity=".18" stroke="currentColor" stroke-width="1.9"/><rect x="9" y="2.5" width="6" height="4" rx="1.2" fill="var(--surf)" stroke="currentColor" stroke-width="1.7"/><path d="M8.8 13.4l2.3 2.4 4.2-4.7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="nav-lbl">Tasks</span>
+    </button>
+    <button class="nav-btn" id="nav-focus" data-navkey="focus" draggable="true" onclick="goFocusNav()" title="Focus Block: a distraction-free timer">
+      <svg class="nav-ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="13.5" r="7.5" fill="currentColor" fill-opacity=".18" stroke="currentColor" stroke-width="1.9"/><path d="M9.5 2.8h5M12 2.8V6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><path d="M12 13.5V9.6M12 13.5l2.7 1.7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M18.4 7l1.3-1.3" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+      <span class="nav-lbl">Focus Block</span>
+    </button>
+    <button class="nav-btn" id="nav-weekly" data-navkey="weekly" draggable="true" onclick="showView('weekly')" title="Weekly: look back at your week and plan the next one">
+      <svg class="nav-ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.5 20.5h17" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><rect x="5" y="12.5" width="3.6" height="8" rx="1" fill="currentColor" fill-opacity=".18" stroke="currentColor" stroke-width="1.7"/><rect x="10.2" y="8.2" width="3.6" height="12.3" rx="1" fill="currentColor" fill-opacity=".18" stroke="currentColor" stroke-width="1.7"/><rect x="15.4" y="3.8" width="3.6" height="16.7" rx="1" fill="currentColor" fill-opacity=".18" stroke="currentColor" stroke-width="1.7"/></svg>
+      <span class="nav-lbl">Weekly</span>
+    </button>
+    <button class="nav-btn" id="nav-habits" data-navkey="habits" draggable="true" onclick="showView('habits')" title="Habits: small daily routines that stick">
+      <svg class="nav-ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21v-9.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><path d="M12 13.2c0-4-2.6-6.6-7-6.6 0 4.2 2.6 6.6 7 6.6z" fill="currentColor" fill-opacity=".18" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 15.2c0-3.3 2.2-5.7 6.6-5.7 0 3.7-2.2 5.7-6.6 5.7z" fill="currentColor" fill-opacity=".18" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 21h8" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+      <span class="nav-lbl">Habits</span>
+    </button>
+    <button class="nav-btn" id="nav-calendar" data-navkey="calendar" draggable="true" onclick="showView('calendar')" title="Calendar: put tasks on a day and time">
+      <svg class="nav-ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5" fill="currentColor" fill-opacity=".18" stroke="currentColor" stroke-width="1.9"/><path d="M3.5 10h17" stroke="currentColor" stroke-width="1.9"/><path d="M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><g fill="currentColor"><circle cx="8" cy="13.8" r="1.15"/><circle cx="12" cy="13.8" r="1.15"/><circle cx="16" cy="13.8" r="1.15"/><circle cx="8" cy="17.1" r="1.15"/><circle cx="12" cy="17.1" r="1.15"/></g></svg>
+      <span class="nav-lbl">Calendar</span>
+    </button>
+    <button class="nav-btn" id="nav-notes" data-navkey="notes" draggable="true" onclick="showView('notes')" title="Notes: write things down">
+      <svg class="nav-ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3.5h8.5L19 8v12a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4.5a1 1 0 0 1 1-1z" fill="currentColor" fill-opacity=".18" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M14.5 3.5V8H19" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.5 12.5h7M8.5 16h4.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+      <span class="nav-lbl">Notes</span>
+    </button>
+    <button class="nav-btn" id="nav-library" data-navkey="library" draggable="true" onclick="showView('library')" title="Library: short reads when you feel stuck">
+      <svg class="nav-ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.5 20.5h17" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><rect x="4.5" y="5" width="4.4" height="15.5" rx="1" fill="currentColor" fill-opacity=".18" stroke="currentColor" stroke-width="1.7"/><rect x="10" y="3.2" width="4.4" height="17.3" rx="1" fill="currentColor" fill-opacity=".18" stroke="currentColor" stroke-width="1.7"/><rect x="15.6" y="6.5" width="4.4" height="14" rx="1" transform="rotate(-11 17.8 13.5)" fill="currentColor" fill-opacity=".18" stroke="currentColor" stroke-width="1.7"/></svg>
+      <span class="nav-lbl">Library</span>
+    </button>
+  </nav>
+  <button class="guide-btn" id="guide-btn" onclick="openGuide()" title="Guided tour of this tab (G)" aria-label="Start the guided tour of this tab">
+    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.8"/><path d="M10 8.6l5 3.4-5 3.4z" fill="currentColor"/></svg>
+    <span class="guide-btn-lbl">GUIDE</span>
+  </button>
+  <button class="rulebook-btn" id="rulebook-btn" onclick="openRulebook()" title="Rulebook: how the A–E letters work (R)" aria-label="Open the rulebook: how the A to E letters work">
+    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" aria-hidden="true"><path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v15H6.5A1.5 1.5 0 0 0 5 19.5v-15z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M5 19.5A1.5 1.5 0 0 0 6.5 21H19v-3" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8h6M9 11.5h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity=".75"/></svg>
+    <span class="rulebook-btn-lbl">RULEBOOK</span>
+  </button>
+  <button class="log-btn" id="log-btn" onclick="openHist()" title="Session log — every focus block you've run" aria-label="Open the session log">
+    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.8"/><path d="M12 7.5V12l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span class="log-btn-count" id="log-count">0</span>
+  </button>
+  <button class="focus-habits-btn" id="focus-habits-btn" onclick="openFocusHabits()" title="Habits check-in" style="display:none" aria-label="Habits check-in"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21v-9.5"/><path d="M12 13.2c0-4-2.6-6.6-7-6.6 0 4.2 2.6 6.6 7 6.6z"/><path d="M12 15.2c0-3.3 2.2-5.7 6.6-5.7 0 3.7-2.2 5.7-6.6 5.7z"/></svg></button>
+  <div class="mode-switch" id="focus-mode-btn" role="group" aria-label="View mode" title="Calm shows only what you need today. Full shows every feature."><button type="button" class="ms-opt ms-calm" onclick="setViewMode(true)" title="Calm: only the add bar and your A box">Calm</button><button type="button" class="ms-opt ms-full" onclick="setViewMode(false)" title="Full: every tool and feature">Full</button></div>
+  <button class="settings-gear-btn" id="settings-gear-btn" onclick="openSettings();fillFocusSettings()" title="Settings">
+    <svg viewBox="0 0 24 24" width="15" height="15" fill="none"><path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" stroke="currentColor" stroke-width="1.8"/><path d="M19.4 13.5a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V19.4a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1.08-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H4.6a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1.08 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H10.5a1.65 1.65 0 0 0 1-1.51V4.6a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V10.5a1.65 1.65 0 0 0 1.51 1H19.4a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" opacity=".85"/></svg>
+  </button>
+  </div>
+</header>
+
+<div class="panel-backdrop" id="focus-habits-backdrop" onclick="closeFocusHabits()"></div>
+<div class="side-panel" id="focus-habits-panel">
+  <div class="panel-close" onclick="closeFocusHabits()">✕ CLOSE</div>
+  <h2 class="panel-title">HABITS</h2>
+  <div class="panel-sub">A quick check-in, without leaving Focus Mode</div>
+  <div id="focus-habits-mount"></div>
+</div>
+
+
+<div class="panel-backdrop" id="settings-backdrop" onclick="closeSettings()"></div>
+<div class="side-panel" id="settings-panel">
+  <div class="panel-close" onclick="closeSettings()">✕ CLOSE</div>
+  <div class="settings-saved-wrap" aria-live="polite"><span class="settings-autosave" id="set-autosave"></span></div>
+  <h2 class="panel-title">SETTINGS</h2>
+  <div class="panel-sub">Everything saves as you change it</div>
+
+  <section class="set-card set-link-card" id="set-acct-link" data-noauto="1">
+    <span class="set-card-ico"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cloud"/></svg></span>
+    <div class="set-card-headtxt"><div class="set-card-title">Account &amp; sync</div><div class="settings-acct-state">Sign in, sync and storage are in your Profile.</div></div>
+    <button type="button" class="set-secondary" onclick="openProfilePanel()">OPEN PROFILE →</button>
+  </section>
+
+  <section class="set-card" id="set-acct-card" data-noauto="1">
+    <div class="set-card-head">
+      <span class="set-card-ico"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cloud"/></svg></span>
+      <div class="set-card-headtxt"><div class="set-card-title">Account &amp; Sync</div><div class="settings-acct-state" id="set-acct-state"></div></div>
+      <span class="set-chip" id="set-sync-chip"></span>
+    </div>
+    <div id="set-acct-out">
+      <p class="set-card-text" id="set-acct-pitch">Optional. Sign in to back up your data and use it on your other devices. Without an account, everything stays in this browser only.</p>
+      <button type="button" class="set-primary" id="set-acct-btn" onclick="openAccountFromSettings()">SIGN IN / CREATE ACCOUNT</button>
+    </div>
+    <div id="set-acct-in" style="display:none">
+      <div class="toggle-row set-sync-row">
+        <div><div class="toggle-row-lbl">Sync everything across my devices</div><span class="toggle-row-sub">Optional. Tasks, habits, notes and calendar stay in step on every device you sign in on. Off = the old way: only older data moves to the cloud when this browser gets full.</span></div>
+        <label class="toggle-switch"><input type="checkbox" id="set-fullsync" onchange="fsToggle(this.checked)"><span class="tsw-track"><span class="tsw-thumb"></span></span></label>
+      </div>
+      <div class="set-meter-wrap">
+        <div class="set-meter"><span id="set-meter-bar"></span></div>
+        <div class="set-meter-txt" id="set-usage-txt"></div>
+      </div>
+      <div class="set-last" id="set-last-sync"></div>
+      <div class="set-conflicts" id="set-conflicts" style="display:none"></div>
+      <div class="set-btn-pair">
+        <button type="button" class="set-secondary" id="set-sync-now" onclick="fsSyncNow()">SYNC NOW</button>
+        <button type="button" class="set-secondary" onclick="openAccountFromSettings()">MANAGE ACCOUNT</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="set-card" id="set-founding-card" data-noauto="1">
+    <div class="set-card-head">
+      <span class="set-card-ico"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sparkle"/></svg></span>
+      <div class="set-card-headtxt"><div class="set-card-title">Early access offer</div><div class="settings-acct-state">Free during the beta</div></div>
+    </div>
+    <div id="set-founding-out">
+      <p class="set-card-text">BLOC is free while we test it. Accounts created during the beta get 50% off for life when premium plans launch. Create one to lock it in.</p>
+      <button type="button" class="set-primary" onclick="claimFounding()">CREATE ACCOUNT</button>
+    </div>
+    <div id="set-founding-in">
+      <p class="set-card-text">You're on the early-access list. Your account gets 50% off for life when premium plans launch.</p>
+    </div>
+  </section>
+
+  <section class="set-card" data-noauto="1">
+    <div class="set-card-head">
+      <span class="set-card-ico"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-palette"/></svg></span>
+      <div class="set-card-headtxt"><div class="set-card-title">Appearance</div><div class="settings-acct-state">Tap a theme to switch instantly</div></div>
+    </div>
+    <div class="set-theme-grid" id="set-theme-grid"></div>
+  </section>
+
+  <details class="set-acc" open>
+    <summary><span class="set-acc-ico"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sparkle"/></svg></span><span class="set-acc-txt"><span class="set-acc-title">General</span><span class="set-acc-sub">Start screen, time zone</span></span></summary>
+    <div class="set-acc-body">
+
+    <div class="settings-field">
+      <label>Default view when opening the app</label>
+      <select class="settings-select" id="set-default-view">
+        <option value="tasks">Tasks</option>
+        <option value="focus">Focus Block</option>
+        <option value="weekly">Weekly</option>
+        <option value="calendar">Calendar</option>
+        <option value="notes">Notes</option>
+        <option value="last">Remember last view</option>
+      </select>
+    </div>
+    <div class="settings-field">
+      <label>Time zone</label>
+      <select class="settings-select" id="set-timezone"></select>
+      <span class="settings-hint">Your day, streaks, greeting and calendar follow this. It's saved once and stays put — a VPN or travelling won't change it. Only you can change it here.</span>
+      <button type="button" class="cal-nav-btn settings-tz-device" id="set-tz-device" onclick="useDeviceTimezone()"></button>
+    </div>
+    <div class="toggle-row">
+      <div><div class="toggle-row-lbl">Show daily welcome greeting</div><span class="toggle-row-sub">The "Good morning" popup once per day</span></div>
+      <label class="toggle-switch"><input type="checkbox" id="set-show-welcome"><span class="tsw-track"><span class="tsw-thumb"></span></span></label>
+    </div>
+    </div>
+  </details>
+  <details class="set-acc">
+    <summary><span class="set-acc-ico"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-volume"/></svg></span><span class="set-acc-txt"><span class="set-acc-title">Voice &amp; Greeting</span><span class="set-acc-sub">How BLOC speaks to you</span></span></summary>
+    <div class="set-acc-body">
+
+    <div class="toggle-row">
+      <div><div class="toggle-row-lbl">Auto-play greeting voice</div><span class="toggle-row-sub">Off = greeting stays silent until you tap <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-volume"/></svg> </span></div>
+      <label class="toggle-switch"><input type="checkbox" id="set-voice-autoplay"><span class="tsw-track"><span class="tsw-thumb"></span></span></label>
+    </div>
+    <div class="settings-field">
+      <label>Voice engine</label>
+      <select class="settings-select" id="set-voice-engine" onchange="toggleOpenaiFields()">
+        <option value="browser">Browser built-in voice (free)</option>
+        <option value="openai">OpenAI cloud voice (needs API key)</option>
+      </select>
+    </div>
+    <div id="set-openai-fields" style="display:none;">
+      <div class="settings-field">
+        <label>OpenAI API key</label>
+        <input type="password" class="settings-input" id="set-openai-key" placeholder="sk-...">
+        <span class="settings-hint">Stored only in this browser's localStorage, never written into the app file. Anyone with devtools access to this browser profile could read it.</span>
+      </div>
+      <div class="settings-field">
+        <label>OpenAI voice</label>
+        <select class="settings-select" id="set-openai-voice">
+          <option value="alloy">Alloy</option>
+          <option value="echo">Echo</option>
+          <option value="fable">Fable</option>
+          <option value="onyx">Onyx</option>
+          <option value="nova">Nova</option>
+          <option value="shimmer">Shimmer</option>
+        </select>
+      </div>
+    </div>
+    <div class="settings-field">
+      <label>Your name (shown &amp; spoken in greeting)</label>
+      <input type="text" class="settings-input" id="set-user-name" maxlength="60" placeholder="Your name">
+    </div>
+    <div class="settings-field">
+      <label>Phonetic spelling for speech (optional)</label>
+      <input type="text" class="settings-input" id="set-user-name-speech" maxlength="60" placeholder="How it should sound">
+      <span class="settings-hint">Only affects pronunciation when spoken aloud — the name shown on screen stays as typed above.</span>
+    </div>
+    </div>
+  </details>
+  <details class="set-acc" id="wj-acc">
+    <summary><span class="set-acc-ico"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-volume"/></svg></span><span class="set-acc-txt"><span class="set-acc-title">Wojak voice-over</span><span class="set-acc-sub">On by default. Speaks only when you tap Listen</span></span></summary>
+    <div class="set-acc-body">
+    <div class="toggle-row">
+      <div><div class="toggle-row-lbl">Let Wojak read replies aloud</div><span class="toggle-row-sub">Adds a Listen button under each reply. Wojak only speaks when you tap it. Off hides the button.</span></div>
+      <label class="toggle-switch"><input type="checkbox" id="wj-on"><span class="tsw-track"><span class="tsw-thumb"></span></span></label>
+    </div>
+    <div id="wj-sub" style="display:none;">
+      <div class="toggle-row">
+        <div><div class="toggle-row-lbl">Read new replies automatically</div><span class="toggle-row-sub">Only replies that arrive while you are chatting. Old messages are never read out.</span></div>
+        <label class="toggle-switch"><input type="checkbox" id="wj-auto"><span class="tsw-track"><span class="tsw-thumb"></span></span></label>
+      </div>
+      <div class="settings-field">
+        <label for="wj-engine">Voice source</label>
+        <select class="settings-select" id="wj-engine">
+          <option value="browser">This device’s voices (free, stays on your device)</option>
+          <option value="openai">OpenAI voice</option>
+        </select>
+      </div>
+      <div id="wj-browser-fields">
+        <div class="settings-field"><label for="wj-voice">Voice</label><select class="settings-select" id="wj-voice"></select></div>
+      </div>
+      <div id="wj-oa-fields" style="display:none;">
+        <div class="settings-field"><label for="wj-oavoice">OpenAI voice</label>
+          <select class="settings-select" id="wj-oavoice">
+            <option value="alloy">Alloy (neutral, natural)</option><option value="onyx">Onyx (deep, calm)</option><option value="echo">Echo</option>
+            <option value="fable">Fable</option><option value="nova">Nova</option><option value="shimmer">Shimmer</option>
+          </select>
+          <span class="settings-hint">Uses the key from Voice &amp; Greeting. The reply text is sent to OpenAI to make the audio.</span>
+        </div>
+      </div>
+      <div class="settings-field"><label for="wj-rate">Speed</label><div class="wj-rate-row"><input type="range" id="wj-rate" min="0.7" max="1.2" step="0.02"><span id="wj-rate-val"></span></div></div>
+      <span class="settings-hint" id="wj-hint" style="display:block;margin-bottom:10px;"></span>
+      <button type="button" class="evt-cancel" id="wj-test">TEST VOICE</button>
+    </div>
+    </div>
+  </details>
+  <details class="set-acc" id="wl-acc">
+    <summary><span class="set-acc-ico"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sliders"/></svg></span><span class="set-acc-txt"><span class="set-acc-title">Wojak local AI</span><span class="set-acc-sub">Optional. Runs on your computer</span></span></summary>
+    <div class="set-acc-body">
+    <div class="toggle-row">
+      <div><div class="toggle-row-lbl">Use a local model (Ollama)</div><span class="toggle-row-sub">Private and free to use. Off = Wojak uses your Gemini key as before.</span></div>
+      <label class="toggle-switch"><input type="checkbox" id="wl-on"><span class="tsw-track"><span class="tsw-thumb"></span></span></label>
+    </div>
+    <div id="wl-sub" style="display:none;">
+      <span class="settings-hint" style="display:block;margin-bottom:10px;">Setup: install Ollama (ollama.com), run <b>ollama pull llama3.1:8b</b>, then start it with the environment variable <b>OLLAMA_ORIGINS=*</b> so this page is allowed to talk to it. Press TEST to check.</span>
+      <div class="settings-field"><label for="wl-model">Model</label><input type="text" class="settings-input" id="wl-model" placeholder="llama3.1:8b"></div>
+      <div class="settings-field"><label for="wl-host">Ollama address</label><input type="text" class="settings-input" id="wl-host" placeholder="http://127.0.0.1:11434"></div>
+      <button type="button" class="evt-cancel" id="wl-test">TEST</button>
+      <span class="settings-hint" id="wl-status" style="display:block;margin-top:8px;"></span>
+    </div>
+    </div>
+  </details>
+
+
+  <details class="set-acc">
+    <summary><span class="set-acc-ico"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sparkle"/></svg></span><span class="set-acc-txt"><span class="set-acc-title">AI &amp; Personalization</span><span class="set-acc-sub">Your profile, Gemini keys, A–E wording</span></span></summary>
+    <div class="set-acc-body">
+
+    <div class="settings-field">
+      <label>Your profile (used by Wojak &amp; Weekly Review)</label>
+      <textarea class="settings-input" id="set-user-profile" rows="7" maxlength="2000" placeholder="How you think, decide, and react — what helps an AI actually understand you instead of treating you like a generic user."></textarea>
+      <span class="settings-hint">Included in every Gemini prompt so replies are shaped around how you actually work, not a generic user. Stored only in this browser, never sent anywhere except alongside your own questions. Optional — leave it blank and the AI uses a neutral, general style. Edit or clear it any time.</span>
+    </div>
+    <div class="settings-field">
+      <label>Gemini keys</label>
+      <button type="button" class="cal-nav-btn settings-personalize-btn" onclick="closeSettings();baiOpenKeyManager()"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-key"/></svg> MANAGE GEMINI KEYS</button>
+      <span class="settings-hint">Add a primary key and an optional backup (for example a family member's, with their OK). If one is rejected, out of quota or busy, BLOC switches to the other on its own.</span>
+    </div>
+    <div class="settings-field">
+      <label>Wording for your work</label>
+      <button type="button" class="cal-nav-btn settings-personalize-btn" onclick="closeSettings();pzOpen()"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sparkle"/></svg> PERSONALIZE THE A–E WORDING</button>
+      <span class="settings-hint">Same method, with examples written for your work by the AI you already use — nothing to type, no key needed.</span>
+    </div>
+    </div>
+  </details>
+  <details class="set-acc">
+    <summary><span class="set-acc-ico"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sliders"/></svg></span><span class="set-acc-txt"><span class="set-acc-title">Buttons &amp; Behavior</span><span class="set-acc-sub">Floating buttons, sounds, working hours</span></span></summary>
+    <div class="set-acc-body">
+
+    <div class="toggle-row">
+      <div><div class="toggle-row-lbl">Wojak button (◆)</div><span class="toggle-row-sub">The chat bubble in the corner. Off hides it everywhere, including “Ask Agent” on Weekly. Turn it back on here any time.</span></div>
+      <label class="toggle-switch"><input type="checkbox" id="set-agent-btn"><span class="tsw-track"><span class="tsw-thumb"></span></span></label>
+    </div>
+    <div class="toggle-row">
+      <div><div class="toggle-row-lbl">“I’m studying” button</div><span class="toggle-row-sub">Off by default. Turn it on if you like starting a timer in one tap, with no task or length to pick first. Off still leaves Focus Block in the tab bar; a running timer is reachable from there.</span></div>
+      <label class="toggle-switch"><input type="checkbox" id="set-study-btn"><span class="tsw-track"><span class="tsw-thumb"></span></span></label>
+    </div>
+
+    <div class="toggle-row">
+      <div><div class="toggle-row-lbl">Celebration animations</div><span class="toggle-row-sub">Wax seal / medal / treasure gem on task milestones</span></div>
+      <label class="toggle-switch"><input type="checkbox" id="set-celebrations"><span class="tsw-track"><span class="tsw-thumb"></span></span></label>
+    </div>
+    <div class="toggle-row">
+      <div><div class="toggle-row-lbl">Timer sound effects</div><span class="toggle-row-sub">Chimes on focus block / break transitions</span></div>
+      <label class="toggle-switch"><input type="checkbox" id="set-timer-sounds"><span class="tsw-track"><span class="tsw-thumb"></span></span></label>
+    </div>
+    <div class="toggle-row">
+      <div><div class="toggle-row-lbl">Timer voice announcements</div><span class="toggle-row-sub">Spoken "Rest time" / "Back to work" so a phase change is hard to miss, even off-screen</span></div>
+      <label class="toggle-switch"><input type="checkbox" id="set-timer-voice"><span class="tsw-track"><span class="tsw-thumb"></span></span></label>
+    </div>
+    <div class="settings-field">
+      <label>Working hours per day</label>
+      <input type="number" class="settings-input" id="set-daily-hours" min="1" max="16" step="0.5" style="max-width:90px">
+      <span class="settings-hint">Used for the overcommitted-day warning on the Tasks view</span>
+    </div>
+    </div>
+  </details>
+  <details class="set-acc">
+    <summary><span class="set-acc-ico"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-clipboard"/></svg></span><span class="set-acc-txt"><span class="set-acc-title">Planning &amp; Tracking</span><span class="set-acc-sub">Weekly plan, habits, goals</span></span></summary>
+    <div class="set-acc-body">
+
+    <div class="toggle-row">
+      <div><div class="toggle-row-lbl">Weekly planning</div><span class="toggle-row-sub">The PLAN tab (outcomes + time budget) next to Weekly Review</span></div>
+      <label class="toggle-switch"><input type="checkbox" id="set-weekly-planning"><span class="tsw-track"><span class="tsw-thumb"></span></span></label>
+    </div>
+    <div class="toggle-row">
+      <div><div class="toggle-row-lbl">Habits</div><span class="toggle-row-sub">Adds the Habits tab — triggers, tiny versions, streak shields that forgive a gap</span></div>
+      <label class="toggle-switch"><input type="checkbox" id="set-habits"><span class="tsw-track"><span class="tsw-thumb"></span></span></label>
+    </div>
+    <div class="toggle-row">
+      <div><div class="toggle-row-lbl">Goals</div><span class="toggle-row-sub">Longer-range goals with task-linked progress, inside the Weekly Plan tab</span></div>
+      <label class="toggle-switch"><input type="checkbox" id="set-goals"><span class="tsw-track"><span class="tsw-thumb"></span></span></label>
+    </div>
+    <div class="toggle-row">
+      <div><div class="toggle-row-lbl">Streak counter</div><span class="toggle-row-sub">Show or hide the <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-flame"/></svg> day streak at the top of the screen</span></div>
+      <button type="button" class="settings-ghost-btn" id="streak-vis-btn" onclick="toggleStreakVisible()">SHOW / HIDE</button>
+    </div>
+    </div>
+  </details>
+  <details class="set-acc">
+    <summary><span class="set-acc-ico"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-book"/></svg></span><span class="set-acc-txt"><span class="set-acc-title">Library &amp; Wisdom</span><span class="set-acc-sub">Quotes, knowledge bites, reading style</span></span></summary>
+    <div class="set-acc-body">
+
+    <div class="settings-field">
+      <label>Special reading style</label>
+      <select class="settings-select" id="set-theme">
+        <option value="default">Standard</option>
+        <option value="ledger">The Ledger — Master Your Time vibe</option>
+      </select>
+      <span class="settings-hint">A leather-and-brass theme inspired by Brian Tracy's "Master Your Time, Master Your Life."</span>
+    </div>
+    <div class="toggle-row">
+      <div><div class="toggle-row-lbl">Brian Tracy quotes</div><span class="toggle-row-sub">A short quote on Tasks, Calendar &amp; Weekly Review — timing auto-adjusts to each line's reading length</span></div>
+      <label class="toggle-switch"><input type="checkbox" id="set-tracy-quotes"><span class="tsw-track"><span class="tsw-thumb"></span></span></label>
+    </div>
+    <div class="toggle-row">
+      <div><div class="toggle-row-lbl">Knowledge bites</div><span class="toggle-row-sub">Mini lessons from the book — optional, off by default</span></div>
+      <label class="toggle-switch"><input type="checkbox" id="set-tracy-knowledge"><span class="tsw-track"><span class="tsw-thumb"></span></span></label>
+    </div>
+    <span class="settings-hint" style="display:block;margin:2px 0 6px;">These two toggles only control the small inline strip above Tasks/Calendar/Weekly. The full Library — problem-based reads, the quote wall, and the Librarian — is always available from the nav bar regardless.</span>
+    <div class="toggle-row">
+      <div><div class="toggle-row-lbl">Real book covers</div><span class="toggle-row-sub">Looks up each cover online (Open Library). Off = clean designed covers, nothing is sent.</span></div>
+      <label class="toggle-switch"><input type="checkbox" id="set-lib-covers" onchange="libSetCoversOn(this.checked)"><span class="tsw-track"><span class="tsw-thumb"></span></span></label>
+    </div>
+    <button class="settings-ghost-btn" style="width:100%;margin-top:6px;" onclick="closeSettings();showView('library')"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-book"/></svg> OPEN LIBRARY</button>
+    </div>
+  </details>
+  <details class="set-acc">
+    <summary><span class="set-acc-ico"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-target"/></svg></span><span class="set-acc-txt"><span class="set-acc-title">Focus Mode</span><span class="set-acc-sub">What stays visible while it is on</span></span></summary>
+    <div class="set-acc-body">
+
+    <span class="settings-hint" style="display:block;margin-bottom:10px;">The <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-target"/></svg> FOCUS button in the header strips every tab down to just what you need to act on. These control what's still allowed to show while it's on — they apply the instant you tap them, like everything else in this panel.</span>
+    <div class="toggle-row">
+      <div><div class="toggle-row-lbl">Show Wojak</div><span class="toggle-row-sub">Keep the ◆ agent button on screen while Focus Mode is on (on by default for new users)</span></div>
+      <label class="toggle-switch"><input type="checkbox" id="set-focus-agent" onchange="setFocusAgentVisible(this.checked)"><span class="tsw-track"><span class="tsw-thumb"></span></span></label>
+    </div>
+    <div class="toggle-row">
+      <div><div class="toggle-row-lbl">Habits shortcut</div><span class="toggle-row-sub">A small <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sprout"/></svg> header button for a quick habit check-in. It only appears when the Habits tab is switched off below, so you never see two.</span></div>
+      <label class="toggle-switch"><input type="checkbox" id="set-focus-habits-btn" onchange="setFocusHabitsBtn(this.checked)"><span class="tsw-track"><span class="tsw-thumb"></span></span></label>
+    </div>
+    <div class="settings-field">
+      <label>Tabs to keep in the header</label>
+      <div class="focus-tabs-grid">
+        <label class="focus-tab-chk-row"><input type="checkbox" class="set-focus-tab-chk" data-navkey="tasks" onchange="setFocusTabEnabled('tasks',this.checked)"> Tasks</label>
+        <label class="focus-tab-chk-row"><input type="checkbox" class="set-focus-tab-chk" data-navkey="focus" onchange="setFocusTabEnabled('focus',this.checked)"> Focus Block</label>
+        <label class="focus-tab-chk-row"><input type="checkbox" class="set-focus-tab-chk" data-navkey="weekly" onchange="setFocusTabEnabled('weekly',this.checked)"> Weekly</label>
+        <label class="focus-tab-chk-row"><input type="checkbox" class="set-focus-tab-chk" data-navkey="calendar" onchange="setFocusTabEnabled('calendar',this.checked)"> Calendar</label>
+        <label class="focus-tab-chk-row"><input type="checkbox" class="set-focus-tab-chk" data-navkey="notes" onchange="setFocusTabEnabled('notes',this.checked)"> Notes</label>
+        <label class="focus-tab-chk-row"><input type="checkbox" class="set-focus-tab-chk" data-navkey="library" onchange="setFocusTabEnabled('library',this.checked)"> Library</label>
+        <label class="focus-tab-chk-row"><input type="checkbox" class="set-focus-tab-chk" data-navkey="habits" onchange="setFocusTabEnabled('habits',this.checked)"> Habits</label>
+      </div>
+      <span class="settings-hint">Unchecked tabs disappear from the header while Focus Mode is on. The gear icon (Settings) always stays put, so you can never get stuck.</span>
+    </div>
+    </div>
+  </details>
+  <details class="set-acc">
+    <summary><span class="set-acc-ico"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-save"/></svg></span><span class="set-acc-txt"><span class="set-acc-title">Reset &amp; settings file</span><span class="set-acc-sub">Settings only. Full backup is in Profile</span></span></summary>
+    <div class="set-acc-body">
+      <div class="settings-note">These buttons cover your <b>settings</b> only, not your tasks, notes or calendar. For a full backup, open <button type="button" class="set-link-btn" onclick="openProfilePanel()">Profile → Your data</button>.</div>
+      <div class="settings-ghost-row">
+        <button class="settings-ghost-btn" onclick="exportSettings()">EXPORT SETTINGS</button>
+        <label class="settings-ghost-btn" for="set-import-file" style="margin:0;">IMPORT SETTINGS</label>
+        <input type="file" id="set-import-file" class="settings-file-input" accept="application/json" onchange="importSettings(this)">
+        <button class="settings-ghost-btn danger" onclick="resetSettings()">RESET SETTINGS</button>
+      </div>
+      <div class="toggle-row">
+        <div><div class="toggle-row-lbl">Clear all tasks</div><span class="toggle-row-sub">Deletes every task in every section. You will be asked to type DELETE first.</span></div>
+        <button type="button" class="settings-ghost-btn danger" onclick="resetAllTasks()">CLEAR TASKS</button>
+      </div>
+    </div>
+  </details>
+
+  <nav class="legal-links"><button type="button" onclick="openLegal('privacy')">Privacy</button><span>·</span><button type="button" onclick="openLegal('terms')">Terms</button></nav>
+</div>
+
+<main id="main">
+<section class="view" id="view-library">
+  <div class="library-wrap">
+    <div class="library-title">LIBRARY</div>
+    <div class="library-sub">Not a book summary — practical help for the problem you're in right now.</div>
+
+    <div class="lib-mode-toggle" id="lib-mode-toggle">
+      <button class="lib-mode-btn active" data-m="topics" onclick="setLibraryMode('topics')">Topics</button>
+      <button class="lib-mode-btn" data-m="books" onclick="setLibraryMode('books')">Books</button>
+      <button class="lib-mode-btn" data-m="quotes" onclick="setLibraryMode('quotes')">Quotes</button>
+      <button class="lib-mode-btn" data-m="librarian" onclick="setLibraryMode('librarian')">Ask Wojak</button>
+    </div>
+
+    <div id="lib-panel-topics">
+      <div id="lib-topics-top">
+        <div class="lib-search-row">
+          <input class="library-search" id="lib-search-input" type="text" placeholder="What are you stuck on? e.g. “exams”, “tired”" oninput="onLibrarySearch(this.value)">
+          <div class="lib-aud-bar" id="lib-aud-bar"></div>
+          <div class="lib-cat-row" id="lib-cat-row"></div>
+        </div>
+        <div id="lib-foryou"></div>
+      </div>
+      <div class="lib-topics-grid" id="lib-topics-grid"></div>
+      <div id="lib-topic-detail" style="display:none"></div>
+    </div>
+
+    <div id="lib-panel-books" style="display:none">
+      <div class="lib-books-hd">
+        <div class="lib-books-hd-txt">Run your own book through your own AI, then add it here.</div>
+        <button class="lib-addbook-btn" onclick="libOpenAddBookModal()">+ ADD A BOOK</button>
+      </div>
+      <div class="lib-books-grid" id="lib-books-grid"></div>
+      <div id="lib-book-detail" style="display:none"></div>
+    </div>
+
+    <div id="lib-panel-quotes" style="display:none">
+      <div class="lib-spotlight" id="lib-spotlight"></div>
+      <div class="lib-controls">
+        <button class="lib-ctl-btn" onclick="libraryPrev()" title="Previous">‹</button>
+        <button class="lib-ctl-btn" id="lib-play-btn" onclick="toggleLibraryPlay()" title="Auto-advance, timed to each line's own reading length">▶ PLAY</button>
+        <button class="lib-ctl-btn" onclick="libraryNext()" title="Next">›</button>
+      </div>
+      <div class="lib-filter-row" id="lib-filter-row"></div>
+      <div class="lib-grid" id="lib-grid"></div>
+      <div class="lib-footnote">Quotes are short lines attributed to Brian Tracy; concept notes are our own paraphrase of his frameworks, not direct quotations.</div>
+    </div>
+
+    <div id="lib-panel-librarian" style="display:none">
+      <div class="lib-chat-panel" id="lib-chat-panel">
+        <div class="lib-chat-head">
+          <div>
+            <div class="lib-chat-head-title">WOJAK</div>
+            <div class="lib-chat-head-sub" id="lib-chat-head-sub">Tell it what's going on — it searches the whole Library, then answers you directly.</div>
+          </div>
+          <button class="lib-chat-clear-btn" onclick="baiOpenKeyManager()" title="Gemini keys (primary + backup)" aria-label="Gemini keys"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sliders"/></svg> </button>
+        </div>
+        <div class="bc-bar" id="lib-chat-bar"></div>
+        <div class="bc-hist" id="lib-chat-hist"></div>
+        <div class="lib-chat-chips" id="lib-chat-chips"></div>
+        <div class="lib-chat-messages" id="lib-chat-messages"></div>
+        <div class="lib-chat-input-row">
+          <input id="lib-chat-input" type="text" placeholder="What are you struggling with right now?" autocomplete="off" onkeydown="if(event.key==='Enter')libSend()">
+          <button class="lib-chat-send-btn" onclick="libSend()" title="Send">→</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="view active" id="view-tasks">
+  <div class="date-bar focus-hide">
+    <div class="date-txt" id="date-display">—</div>
+    <div class="prog-wrap">
+      <div class="prog-track"><div class="prog-fill" id="prog-fill"></div></div>
+      <div class="prog-lbl" id="prog-lbl">0 / 0</div>
+    </div>
+    <div class="daily-budget" id="daily-budget" style="display:none"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-timer"/></svg> <span id="budget-txt">0m planned</span></div>
+    <div class="bar-status" role="status">
+      <span class="score-badge" id="score-badge" style="display:none" title="Today's score out of 100">Score <b id="score-val">0</b></span>
+      <span class="a-pending" id="a-badge" style="display:none"></span>
+    </div>
+    <div class="filter-seg" role="group" aria-label="Filter tasks">
+      <button class="seg-btn" id="leverage-toggle" onclick="toggleHighLeverageFilter()" aria-pressed="false" title="Show only the top ~20% of your open tasks: the ones that matter most">Top priorities</button>
+      <button class="seg-btn" id="open-loops-pill" onclick="toggleOpenLoopsFilter()" aria-pressed="false" style="display:none" title="Show only tasks that have been open for 3 or more days"></button>
+    </div>
+    <button class="kbd-hint-trigger" id="kbd-hint-trigger" onclick="toggleKbdHint(event)" title="Keyboard shortcuts" aria-label="Keyboard shortcuts"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M6.5 9h.01M10 9h.01M14 9h.01M17.5 9h.01M7 15h10"/></svg> Shortcuts</button>
+  </div>
+  <div id="tracy-strip-tasks" class="focus-hide"></div>
+  <div id="tracy-insight-tasks" class="focus-hide"></div>
+  <div class="task-toolbar focus-hide">
+    <button class="tt-btn tt-fit" onclick="showFitCheck()" title="Does today's list actually fit in the time you have left? Shows what to move to tomorrow."><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M16.2 7.8l-2.1 6.3-6.3 2.1 2.1-6.3z"/></svg> Fit Check</button>
+    <div class="tt-divider"></div>
+    <button class="tt-btn" id="energy-btn" onclick="openEnergyModal()" title="Tell BLOC how much energy you have today. On a low day it can show just your one top task."><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg> My energy today</button>
+  </div>
+
+  <div class="tasks-wrap">
+    <div class="mit-widget focus-hide" id="mit-widget" style="display:none">
+      <div class="mit-widget-title"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sparkle"/></svg> TODAY'S 3 MOST IMPORTANT</div>
+      <div class="mit-widget-list" id="mit-widget-list"></div>
+    </div>
+    <div class="add-form">
+      <input class="add-input" id="new-input" type="text" placeholder="New task…" enterkeyhint="done" autocomplete="off" autocapitalize="sentences"
+        onkeydown="if(event.key==='Enter')addTask()">
+      <select class="type-sel" id="new-type">
+        <option value="A">A — Must Do</option>
+        <option value="B">B — Should Do</option>
+        <option value="C">C — Nice to Do</option>
+        <option value="D">D — Delegate</option>
+        <option value="E">E — Eliminate</option>
+      </select>
+      <div class="plan-target" id="plan-target" title="Which day this task (and quick-adds below) belong to">
+        <div class="pt-indicator" id="pt-indicator" aria-hidden="true"></div>
+        <button class="pt-btn" data-t="today" onclick="setPlanTarget('today')">Today</button>
+        <button class="pt-btn" data-t="tomorrow" onclick="setPlanTarget('tomorrow')">Tomorrow</button>
+        <button class="pt-btn" data-t="someday" onclick="setPlanTarget('someday')">Someday</button>
+      </div>
+      <button class="btn-add" onclick="addTask()">ADD <span class="btn-add-arrow">→</span></button>
+    </div>
+    <div class="simple-view-row" id="simple-view-row"><button type="button" id="quick-tour-link" class="phone-only" onclick="openGuide('start')">Quick tour</button><button type="button" id="rulebook-link" class="phone-only" onclick="openRulebook()">How A–E works</button></div>
+    <div class="rb-intro" id="rb-intro" role="region" aria-label="New to BLOC? How the A to E letters work" style="display:none">
+      <button type="button" class="rb-intro-x" onclick="rbIntroDismiss()" aria-label="Got it, hide this" title="Got it. Hide this (the Rulebook is always one tap away)">✕</button>
+      <div class="rb-intro-title">New here? Give every task a letter.</div>
+      <div class="rb-intro-sub">BLOC asks one question about each task: <strong>what happens if this doesn’t get done?</strong> Your answer sets its letter, and the letter tells you what to do first. Tap a letter to see what it means.</div>
+      <div class="rb-intro-chips">
+        <button type="button" class="rb-intro-chip" data-l="A" onclick="rbIntroOpen('A')"><b>A</b> Must do</button>
+        <button type="button" class="rb-intro-chip" data-l="B" onclick="rbIntroOpen('B')"><b>B</b> Should do</button>
+        <button type="button" class="rb-intro-chip" data-l="C" onclick="rbIntroOpen('C')"><b>C</b> Nice to do</button>
+        <button type="button" class="rb-intro-chip" data-l="D" onclick="rbIntroOpen('D')"><b>D</b> Delegate</button>
+        <button type="button" class="rb-intro-chip" data-l="E" onclick="rbIntroOpen('E')"><b>E</b> Eliminate</button>
+      </div>
+      <div class="rb-intro-btns">
+        <button type="button" class="rb-intro-btn pri" onclick="openRulebook('method')">Read the 1-minute rulebook →</button>
+        <button type="button" class="rb-intro-btn" onclick="openRulebook('which')">Not sure? Answer 4 quick questions</button>
+      </div>
+    </div>
+    <div class="sections" id="sections"></div>
+  </div>
+
+  <div class="btm-bar focus-hide">
+    <button class="btm-btn" onclick="openThemeModal()">Theme</button>
+    <button class="btm-btn" onclick="clearDone()">Clear Done</button>
+    <div class="data-menu-wrap">
+      <button class="btm-btn" onclick="toggleDataMenu(event)">Data ▾</button>
+      <div class="data-menu" id="data-menu">
+        <button class="data-menu-item" onclick="exportTasks();closeDataMenu()">↗ Export as text</button>
+        <button class="data-menu-item" onclick="exportICS();closeDataMenu()"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-calendar"/></svg> Export to calendar (.ics)</button>
+        <button class="data-menu-item" onclick="closeDataMenu();openProfilePanel()">↗ Full backup &amp; restore (Profile)</button>
+        
+        <div class="bg-hint" style="padding:8px 11px 4px;max-width:190px;">Everything here lives only in this browser — nothing is synced anywhere. Back up occasionally so you don't lose it.</div>
+      </div>
+    </div>
+    <button class="btm-btn primary" onclick="openReflection()"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sparkle"/></svg> End of Day</button>
+    <input type="file" id="json-import" accept=".json" style="display:none" onchange="importJSON(event)">
+  </div>
+</section>
+
+<section class="view" id="view-focus-setup">
+  <div class="fs-wrap">
+    <div class="fs-title">PLAN YOUR <span>FOCUS.</span></div>
+    <div class="fs-tagline">Eat the frog. One block at a time.</div>
+    <div class="field">
+      <label class="field-lbl" for="focus-task-custom">Focus task<span class="fs-hint">Auto-filled from your A-1 task</span></label>
+      <div class="combo" id="focus-combo" data-open="0">
+        <input class="field-input" id="focus-task-custom" role="combobox" aria-expanded="false" aria-controls="focus-combo-list" aria-autocomplete="list" autocomplete="off" placeholder="Pick a pending task or type your own…"/>
+        <button type="button" class="combo-btn" id="focus-combo-btn" tabindex="-1" aria-label="Show pending tasks">▾</button>
+        <ul class="combo-list" id="focus-combo-list" role="listbox" hidden></ul>
+      </div>
+      <select id="focus-task-select" hidden aria-hidden="true" tabindex="-1">
+        <option value="">SELECT FROM PENDING TASKS…</option>
+      </select>
+    </div>
+    <span class="field-lbl" id="mode-lbl">Session mode</span>
+    <div class="mode-row" id="mode-row" role="group" aria-labelledby="mode-lbl">
+      <button type="button" class="mode-opt on" data-mode="free" onclick="selectMode('free')"><span>Free block</span><small>Custom duration</small></button>
+      <button type="button" class="mode-opt" data-mode="pomo" onclick="selectMode('pomo')"><span>Pomodoro</span><small>Work + breaks</small></button>
+      <button type="button" class="mode-opt" data-mode="sprint" onclick="selectMode('sprint')"><span>Deep sprint</span><small>No breaks</small></button>
+    </div>
+    <div id="free-duration-cfg">
+      <div class="dur-head"><label class="field-lbl">Duration</label><button type="button" class="dur-edit" id="dur-edit" onclick="toggleDurEdit()">Edit</button></div>
+      <div class="presets" id="duration-presets"></div>
+      <div class="custom-row" id="custom-row" hidden>
+        <label>Custom:</label>
+        <input class="num-in" id="custom-h" type="number" min="0" max="23" value="1"/>
+        <label>hr</label>
+        <input class="num-in" id="custom-m" type="number" min="0" max="59" value="0"/>
+        <label>min</label>
+        <button type="button" class="btn-save-preset" id="dur-save" onclick="saveDurPreset()" title="Keep this length as a quick preset">Save as preset</button>
+      </div>
+    </div>
+    <div class="pomo-cfg" id="pomo-cfg">
+      <div class="dur-head"><span class="field-lbl">Presets</span><span class="pomo-tools"><button type="button" class="dur-edit" id="pomo-restore" onclick="resetPomoPresets()" hidden>Restore defaults</button><button type="button" class="dur-edit" id="pomo-edit" onclick="togglePomoEdit()">Edit</button></span></div>
+      <div class="pomo-presets" id="pomo-presets-row"></div>
+      <div class="pomo-sub-row">
+        <button class="pomo-sub on" data-sub="classic" title="Same work and break every round" onclick="setPomoSub('classic')">Classic</button>
+        <button class="pomo-sub" data-sub="custom" title="Set each block yourself" onclick="setPomoSub('custom')">Custom sequence</button>
+      </div>
+      <div id="pomo-classic-cfg">
+        <div class="pomo-row">
+          <label class="pomo-field" for="pomo-work"><span class="pomo-label">Work</span><span class="num-wrap"><input class="num-in" id="pomo-work" type="number" inputmode="numeric" min="1" max="60" value="25"/><span class="unit">min</span></span></label>
+          <label class="pomo-field" for="pomo-short"><span class="pomo-label">Short break</span><span class="num-wrap"><input class="num-in" id="pomo-short" type="number" inputmode="numeric" min="1" max="30" value="5"/><span class="unit">min</span></span></label>
+          <label class="pomo-field" for="pomo-long"><span class="pomo-label">Long break</span><span class="num-wrap"><input class="num-in" id="pomo-long" type="number" inputmode="numeric" min="1" max="60" value="15"/><span class="unit">min</span></span></label>
+          <label class="pomo-field" for="pomo-rounds"><span class="pomo-label">Rounds</span><span class="num-wrap wide"><input class="num-in" id="pomo-rounds" type="number" inputmode="numeric" min="1" max="10" value="4"/><span class="unit">rounds</span></span></label>
+        </div>
+      </div>
+      <div id="pomo-custom-cfg" style="display:none">
+        <div class="seq-hint">Blocks run top to bottom, e.g. 30 work · 10 break · 50 work.</div>
+        <div class="seq-list" id="seq-list"></div>
+        <div class="seq-actions">
+          <button class="btn-save-preset" onclick="seqAdd('w')">+ Work</button>
+          <button class="btn-save-preset" onclick="seqAdd('b')">+ Break</button>
+          <button class="btn-save-preset" onclick="seqClear()">Clear</button>
+        </div>
+      </div>
+      <div class="pomo-save-row">
+        <button type="button" class="btn-save-preset" id="pomo-save" onclick="savePomoPreset()" title="Keep this setup as a quick preset">Save as preset</button>
+      </div>
+    </div>
+    <div class="pomo-total-preview" id="total-preview"></div>
+    <div class="divider"></div>
+    <div class="stats-row focus-hide" id="setup-stats" style="display:none">
+      <div class="stat-cell"><div class="stat-cell-lbl">Sessions</div><div class="stat-cell-val" id="ss-total">0</div></div>
+      <div class="stat-cell"><div class="stat-cell-lbl">Completed</div><div class="stat-cell-val" id="ss-done">0</div></div>
+      <div class="stat-cell"><div class="stat-cell-lbl">Total Time</div><div class="stat-cell-val" id="ss-time">0m</div></div>
+      <div class="stat-cell"><div class="stat-cell-lbl">Streak</div><div class="stat-cell-val" style="color:var(--amber)" id="ss-streak">0<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-flame"/></svg> </div></div>
+    </div>
+    <button class="btn-primary" id="btn-start" onclick="startBlock()">START BLOCK →</button>
+    <div style="height:10px"></div>
+    <button class="btn-ghost focus-hide" onclick="showView('tasks')">← BACK TO TASKS</button>
+  </div>
+</section>
+
+<section class="view" id="view-timer">
+  <div class="timer-wrap">
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center;">
+      <div class="chip"><div class="chip-dot"></div><span id="timer-subject-chip">SESSION</span></div>
+      <div class="phase-badge work" id="phase-badge">WORK</div>
+    </div>
+    <div class="pomo-laps" id="pomo-laps" style="display:none"></div>
+    <div class="pomo-next" id="pomo-next" style="display:none"></div>
+    <div class="ring-wrap" id="ring-wrap">
+      <div class="ring-halo"></div>
+      <div class="ring-bezel"></div>
+      <div class="ring-corner tl"></div>
+      <div class="ring-corner tr"></div>
+      <div class="ring-corner bl"></div>
+      <div class="ring-corner br"></div>
+      <div class="ring-pulse" id="ring-pulse"></div>
+      <svg id="ring-svg" viewBox="0 0 290 290" xmlns="http://www.w3.org/2000/svg">
+        <circle id="ring-track" fill="none" stroke="var(--surf2)" stroke-width="7" cx="145" cy="145" r="116"/>
+        <circle id="ring-progress" cx="145" cy="145" r="116"
+          stroke-dasharray="729.0" stroke-dashoffset="729.0"
+          fill="none" stroke-width="7" stroke-linecap="round"/>
+        <circle id="ring-second-marker" cx="145" cy="29" r="3.5" fill="var(--amber)"/>
+      </svg>
+      <div class="ring-inner">
+        <div class="ring-lbl" id="ring-lbl">ELAPSED</div>
+        <div id="elapsed-display">00:00</div>
+        <div id="target-sub">of 00:00</div>
+        <div id="pct-display">0%</div>
+      </div>
+    </div>
+    <div class="task-chip-row" id="task-chip-row" style="display:none">
+      <div class="task-chip-tag">FOCUS</div>
+      <div class="task-chip-txt" id="task-chip-txt">—</div>
+    </div>
+    <div class="stat-row">
+      <div class="stat"><div class="stat-lbl">Target</div><div class="stat-val" id="stat-target">—</div></div>
+      <div class="stat"><div class="stat-lbl">Remaining</div><div class="stat-val" id="stat-remaining">—</div></div>
+      <div class="stat"><div class="stat-lbl">Done</div><div class="stat-val" style="color:var(--amber)" id="stat-done">—</div></div>
+    </div>
+    <div class="timer-btns">
+      <button class="btn-skip-break" id="btn-skip-break" onclick="skipBreak()">SKIP BREAK →</button>
+      <button class="btn-interrupt" id="btn-interrupt" onclick="tryInterrupt()"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pause"/></svg> INTERRUPT</button>
+    </div>
+    <div class="distraction-row focus-hide">
+      <button class="btn-distract" onclick="logDistraction()">+ DISTRACTION</button>
+      <div class="distract-count" id="distract-count">0 distractions</div>
+    </div>
+    <div class="five-warn" id="five-warn"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-timer"/></svg> 5 MIN LEFT</div>
+    <div class="ambient-row">
+      <button class="amb-btn on" id="amb-off" onclick="setAmbient('off')">SILENCE</button>
+      <button class="amb-btn" id="amb-brown" onclick="setAmbient('brown')">BROWN</button>
+      <button class="amb-btn" id="amb-rain" onclick="setAmbient('rain')">RAIN</button>
+      <button class="amb-btn" id="amb-cafe" onclick="setAmbient('cafe')">CAFÉ</button>
+      <input class="amb-vol" id="amb-vol" type="range" min="0" max="1" step="0.05" value="0.3"
+        oninput="setAmbientVol(this.value)">
+    </div>
+  </div>
+</section>
+
+<section class="view" id="view-paused">
+  <div class="badge badge-red"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pause"/></svg> BLOCK INTERRUPTED</div>
+  <div class="paused-title">YOU STILL NEED<br><span id="paused-remaining">—</span><br>MORE.</div>
+  <div class="sess-card">
+    <div class="sess-head">
+      <div><div class="sess-subj" id="paused-subj">—</div><div class="sess-date" id="paused-date">—</div></div>
+      <div><div class="sess-pct-lbl">PROGRESS</div><div class="sess-pct" id="paused-pct">0%</div></div>
+    </div>
+    <div class="prog-bar"><div class="prog-fill-card" id="paused-bar" style="width:0%"></div></div>
+    <div class="sess-times">
+      <span class="sess-done" id="paused-done-t">✓ 0m done</span>
+      <span class="sess-left" id="paused-left-t">— left</span>
+    </div>
+  </div>
+  <div class="paused-note">Progress is saved. Resume when you're ready —<br>the clock picks up right where you left off.</div>
+  <div class="paused-ctrl">
+    <button class="btn-ghost-ctrl" onclick="abandonBlock()">ABANDON</button>
+    <button class="btn-resume" onclick="resumeBlock()">RESUME →</button>
+  </div>
+</section>
+
+<section class="view" id="view-done">
+  <div class="badge badge-green">✓ BLOCK COMPLETE</div>
+  <div class="done-title">BLOCK<br>CRUSHED.</div>
+  <div class="done-sub" id="done-subject">—</div>
+  <div>
+    <div style="font-size:10px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;margin-bottom:7px;">FOCUSED FOR</div>
+    <div class="done-time" id="done-time">—</div>
+  </div>
+  <div class="done-grid">
+    <div class="done-cell"><div class="done-cell-lbl">Target</div><div class="done-cell-val" id="done-target">—</div></div>
+    <div class="done-cell"><div class="done-cell-lbl">Mode</div><div class="done-cell-val" id="done-mode">—</div></div>
+    <div class="done-cell"><div class="done-cell-lbl">Streak</div><div class="done-cell-val hi" id="done-streak">—</div></div>
+    <div class="done-cell"><div class="done-cell-lbl">Distractions</div><div class="done-cell-val" id="done-distractions">0</div></div>
+  </div>
+  <div class="task-done-prompt" id="task-done-prompt" style="display:none">
+    <div class="tdp-txt">Mark <strong id="tdp-task-name">—</strong> as complete?</div>
+    <div id="tdp-event-wrap" style="display:none;width:100%;">
+      <label style="font-size:11px;opacity:.7;display:block;margin-bottom:4px;">This actual time counts toward which calendar event?</label>
+      <select class="type-sel" id="tdp-event-select" style="width:100%" onchange="onEventLinkChange('tdp-event-select')"></select>
+    </div>
+    <div class="tdp-btns">
+      <button class="tdp-yes" onclick="markFocusTaskDone()">✓ DONE</button>
+      <button class="tdp-no" onclick="dismissTaskPrompt()">Not yet</button>
+    </div>
+  </div>
+  <div class="task-done-prompt" id="task-attach-prompt" style="display:none;flex-direction:column;align-items:stretch;gap:10px;">
+    <div class="tdp-txt">Attach that block to a task? (optional)</div>
+    <select class="type-sel" id="attach-task-select" style="width:100%"></select>
+    <div class="tdp-btns">
+      <button class="tdp-yes" onclick="confirmAttachTask()">LINK →</button>
+      <button class="tdp-no" onclick="dismissAttachPrompt()">SKIP</button>
+    </div>
+  </div>
+  <div class="done-actions">
+    <button class="nav-btn danger" id="btn-stop-alarm" onclick="stopAlarm()"
+      style="width:100%;padding:11px;font-size:10px;border-color:var(--red);color:var(--red);border:1px solid;">STOP ALARM</button>
+    <button class="btn-primary" onclick="newBlock()">START NEW BLOCK</button>
+    <button class="btn-ghost" onclick="showView('tasks')">← BACK TO TASKS</button>
+  </div>
+</section>
+
+<section class="view" id="view-weekly">
+  <div class="weekly-wrap">
+    <div class="weekly-head-row">
+      <div class="weekly-title">WEEKLY REVIEW</div>
+      <div class="wk-mode-toggle" id="wk-mode-toggle">
+        <div class="wk-mode-indicator" id="wk-mode-indicator" aria-hidden="true"></div>
+        <button class="wk-mode-btn active" data-m="review" onclick="setWeeklyMode('review')">REVIEW</button>
+        <button class="wk-mode-btn" data-m="plan" onclick="setWeeklyMode('plan')">PLAN</button>
+      </div>
+    </div>
+    <div class="weekly-sub" id="weekly-range">Last 7 days</div>
+
+    <div id="tracy-strip-weekly" class="focus-hide"></div>
+    <div id="tracy-insight-weekly" class="focus-hide"></div>
+    <div id="weekly-plan-panel" style="display:none">
+     <div class="wk-plan-body">
+
+      <div id="wk-nuance-section" class="focus-hide plan-card plan-nuance">
+        <div class="plan-card-hdr">
+          <div class="plan-card-title">Planning Mode</div>
+          <div class="plan-card-meta">customizable to how this specific week actually works</div>
+        </div>
+        <div class="nuance-row">
+          <div class="nuance-lbl">Task routing</div>
+          <div class="nuance-toggle-group" id="wk-nuance-routing"></div>
+        </div>
+        <div class="nuance-row">
+          <div class="nuance-lbl">Epics vs. deadlines</div>
+          <div class="nuance-toggle-group" id="wk-nuance-deadline"></div>
+        </div>
+        <div class="nuance-row">
+          <div class="nuance-lbl">Capacity this week</div>
+          <div class="nuance-cap-input-wrap">
+            <input type="number" class="nuance-cap-in" id="wk-nuance-capacity-in" min="0" step="0.5" placeholder="hrs"
+              onchange="setPlanCapacityHours(wkOffset,this.value)">
+            <span>hrs/wk</span>
+          </div>
+        </div>
+        <div class="nuance-cap-note" id="wk-nuance-capacity-note"></div>
+      </div>
+
+      <div id="wk-goals-section" class="focus-hide plan-card plan-goals" style="display:none">
+        <div class="plan-card-hdr">
+          <div class="plan-card-title">Long-Term Epics</div>
+          <div class="plan-card-meta">bigger than a week — mathematically bridged to it</div>
+        </div>
+        <div id="wk-goals-list"></div>
+        <div class="wk-goal-add-row">
+          <input class="wk-goal-in" id="wk-goal-in" placeholder="Add an epic… (Enter)" onkeydown="if(event.key==='Enter'){addGoalFromInput();}">
+          <input type="date" class="wk-goal-date-in" id="wk-goal-date-in" title="Target date (optional)">
+        </div>
+      </div>
+
+      <div id="wk-audit-section" class="focus-hide plan-card plan-audit" style="display:none">
+        <div class="plan-card-hdr">
+          <div class="plan-card-title">AI Planning Audit</div>
+          <div class="plan-card-meta">on-device analysis — velocity, bottlenecks, capacity</div>
+        </div>
+        <div class="audit-nudge" id="wk-audit-nudge" style="display:none">
+          <span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-search"/></svg> It's late in the week — worth auditing before it resets.</span>
+          <button class="audit-nudge-btn" onclick="logAudit(wkOffset)">RUN AUDIT</button>
+        </div>
+        <div id="wk-audit-gauge"></div>
+        <div class="plan-subpanel-title" style="margin-top:16px;">BOTTLENECKS</div>
+        <div id="wk-audit-bottlenecks"></div>
+        <div id="wk-audit-epics" style="margin-top:14px;"></div>
+        <div class="plan-subpanel-title" style="margin-top:16px;">SUGGESTED ROUTING <span style="opacity:.6;text-transform:none;letter-spacing:.3px;">— this week's mode</span></div>
+        <div id="wk-audit-routing"></div>
+        <div class="audit-actions">
+          <button class="wki-report-btn" id="wk-audit-apply-btn" style="display:none" onclick="applyRebalance(wkOffset)"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-scale"/></svg> REBALANCE BUDGET</button>
+          <button class="wki-report-btn" onclick="logAudit(wkOffset)"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-search"/></svg> LOG THIS AUDIT</button>
+          <button class="wki-report-btn" style="background:transparent;border:1px solid var(--amber);color:var(--amber);" onclick="aiAuditNote(wkOffset)" title="Sends only the computed numbers above to Gemini (same connection as BLOC Agent)"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sparkle"/></svg> NARRATE WITH AI</button>
+        </div>
+        <div class="wki-report-output" id="wk-audit-ai-output" style="display:none"></div>
+        <div class="audit-footer" id="wk-audit-footer"></div>
+      </div>
+
+      <div id="wk-outcomes-section" class="plan-card plan-outcomes">
+        <div class="plan-card-hdr">
+          <div class="plan-card-title">This Week's Outcomes</div>
+          <div class="plan-card-meta">3–5 max</div>
+        </div>
+        <div id="wk-outcomes-list"></div>
+        <div class="wk-outcome-add-row">
+          <input class="wk-outcome-in" id="wk-outcome-in" placeholder="Add an outcome… (Enter)" onkeydown="if(event.key==='Enter'){addWeeklyOutcome(wkOffset,this.value);this.value='';}">
+        </div>
+
+        <div id="wk-budget-section" class="focus-hide plan-subpanel">
+          <div class="plan-subpanel-title">Time Budget <span style="opacity:.65;text-transform:none;letter-spacing:.3px;">— planned vs. actual, this week</span></div>
+          <div id="wk-budget-editor"></div>
+        </div>
+      </div>
+
+      <div id="wk-delegate-section" class="focus-hide plan-card plan-delegate" style="display:none">
+        <div class="plan-card-hdr">
+          <div class="plan-card-title">Delegate Board</div>
+          <div class="plan-card-meta">waiting on others — BLOC can't notify anyone but you</div>
+        </div>
+        <div id="wk-delegate-list"></div>
+      </div>
+
+     </div>
+    </div>
+
+    <div id="weekly-review-panel">
+
+    <div class="weekly-headline-row">
+      <div class="weekly-headline" id="weekly-headline">—</div>
+      <button class="wk-ask-agent-btn focus-hide" onclick="askAgentAboutWeek()" title="Send this week's data to BLOC Agent and ask about it"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>Ask agent about this week</button>
+    </div>
+    <div class="weekly-grid" id="weekly-grid"></div>
+    <div class="wk-section-title">BREAKDOWN</div>
+    <div class="wk-cat-bars" id="wk-cat-bars"></div>
+
+    <div id="wk-planned-actual" class="focus-hide" style="display:none">
+      <div class="wk-section-title">PLANNED VS. ACTUAL <span style="opacity:.6;text-transform:none;letter-spacing:.3px;">— from this week's time budget</span></div>
+      <div id="wk-planned-actual-bars"></div>
+    </div>
+
+    <details class="wk-details focus-hide" id="wk-details">
+      <summary>Full breakdown &amp; trend <span class="wk-details-sub">— daily activity, productivity graph, insight report</span></summary>
+      <div class="wk-details-body">
+        <div class="wk-section-title">DAILY ACTIVITY</div>
+        <div id="wk-focus-bars" style="display:flex;flex-direction:column;gap:8px;margin-bottom:6px;"></div>
+        <div id="wk-cal-bars" style="display:flex;flex-direction:column;gap:8px;margin-bottom:26px;"></div>
+
+        <div class="wki-section">
+          <div class="wki-title-row">
+            <div class="wk-section-title" style="margin:0;border-bottom:none;padding-bottom:0;flex:1;">PRODUCTIVITY TREND</div>
+            <button class="wki-help-btn" onclick="wkiToggleHelp()" title="What does this graph mean?">?</button>
+          </div>
+          <div class="wki-help-panel" id="wki-help-panel" style="display:none">
+            <div><b>What is this?</b> A day-by-day "score" of your activity, whether or not you used the focus timer. Score = (tasks completed, weighted by priority A→E, ×10) + (minutes of timer-tracked focus, if any). So a heavy task day still shows up even with 0 timer minutes.</div>
+            <div><b>Peak (▲)</b> — a day that scored higher than the days beside it. Your "sweet spot" — worth noticing what you did differently that day.</div>
+            <div><b>Low (▼)</b> — a day that scored lower than the days beside it. Not automatically bad — could be a planned rest day.</div>
+            <div><b>Slope</b> — the line between two days. Green = increasing, red = decreasing, gray = flat (steady/no change).</div>
+            <div><b>Inflection (◆)</b> — a point where the trend's curvature flips, e.g. from "slowing down" to "speeding up." A hint that momentum is changing direction, often before a peak or low actually shows up.</div>
+            <div>Tap any point on the graph for a plain-language breakdown of that day and the interval around it.</div>
+          </div>
+          <div class="wki-range-row">
+            <button class="wki-range-btn" data-days="7" onclick="wkiSetRange(7)">7 DAYS</button>
+            <button class="wki-range-btn" data-days="14" onclick="wkiSetRange(14)">14 DAYS</button>
+            <button class="wki-range-btn" data-days="30" onclick="wkiSetRange(30)">30 DAYS</button>
+          </div>
+          <div class="wki-graph-wrap" id="wki-graph-wrap"></div>
+          <div class="wki-legend">
+            <span><i style="background:var(--amber)"></i>Peak (▲ sweet spot)</span>
+            <span><i style="background:var(--pd)"></i>Low (▼)</span>
+            <span><i style="background:var(--pc)"></i>Inflection (◆ trend shift)</span>
+            <span><i style="background:var(--green)"></i>Rising interval</span>
+            <span><i style="background:var(--red)"></i>Falling interval</span>
+            <span><i style="background:var(--muted2)"></i>Steady interval</span>
+          </div>
+          <div class="wki-detail" id="wki-detail">Tap a point on the graph above to see a plain-language breakdown of that day.</div>
+
+          <div class="wk-section-title">DAILY ACTIVITY — TASKS + FOCUS <span style="opacity:.6;text-transform:none;letter-spacing:.3px;">(matches the range picker above, not the week shown up top)</span></div>
+          <div class="wki-bars" id="wki-bars"></div>
+
+          <div class="wk-section-title">ENERGY VS. OUTPUT</div>
+          <div class="energy-correlation-card" id="wki-energy-card">Log your energy a few more days to unlock this — see the <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-bolt"/></svg> ENERGY button above the task list.</div>
+
+          <div class="wki-report-box">
+            <div class="wki-report-head">
+              <div>
+                <div class="wki-report-title">BLOC Insight Report</div>
+                <div class="wki-report-sub">Optional. A written read of your trend, patterns, and suggested next steps — built from your own data on this device, generated only when you ask.</div>
+              </div>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                <button class="wki-report-btn" onclick="wkiReport()">CREATE REPORT</button>
+                <button class="wki-report-btn" id="wki-ai-report-btn" style="background:transparent;border:1px solid var(--amber);color:var(--amber);" onclick="wkiAiReport()" title="Alternative to the local report above — sends your data snapshot to Gemini (same connection as BLOC Agent)"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sparkle"/></svg> AI REPORT</button>
+              </div>
+            </div>
+            <div class="wki-report-output" id="wki-report-output" style="display:none"></div>
+            <div class="wki-report-output" id="wki-ai-report-output" style="display:none"></div>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <div class="wk-avoidance focus-hide" id="wk-avoidance" style="display:none">
+      <div class="wk-avoidance-title"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-alert"/></svg> AVOIDANCE PATTERN DETECTED</div>
+      <div id="wk-avoidance-list"></div>
+    </div>
+    <div id="wk-reflections-section" class="focus-hide" style="display:none">
+      <div class="wk-section-title">RECENT REFLECTIONS</div>
+      <div id="wk-reflections-list" style="margin-bottom:26px;"></div>
+    </div>
+    </div>
+    <button class="btn-primary focus-hide" style="max-width:400px;font-size:17px;margin-top:8px;" onclick="showView('tasks')">← BACK TO TASKS</button>
+  </div>
+</section>
+
+<section class="view" id="view-habits">
+  <div class="weekly-wrap habits-wrap hx">
+    <header class="hx-head">
+      <div class="hx-head-t">
+        <div class="weekly-title">HABITS</div>
+        <div class="weekly-sub" id="hb-sub">Today</div>
+      </div>
+      <button type="button" class="hx-new" id="hb-add-row" onclick="openHabitBuilder()"><svg viewBox="0 0 24 24" aria-hidden="true" class="hx-i"><path d="M12 5v14M5 12h14"/></svg><span>New habit</span></button>
+    </header>
+
+    <section class="hx-hero hb-summary" id="hb-summary" style="display:none" aria-live="polite"></section>
+
+    <section class="hx-today" aria-label="Today’s habits">
+      <div id="hb-list"></div>
+      <div class="hb-cap-row"><span id="hb-cap" class="hb-cap"></span></div>
+    </section>
+
+    <div id="hb-starters-mount"></div>
+
+    <section class="hx-insights hb-card hb-insights" id="hb-insights" style="display:none"></section>
+
+    <div class="hb-howto">
+      <div class="hb-howto-hd">How to make these stick</div>
+      <div class="hb-howto-grid">
+        <div><strong>Pin a trigger.</strong> “After I pour coffee, I stretch” beats “I should stretch.”</div>
+        <div><strong>Shrink it.</strong> Name a tiny version. On a bad day, the tiny one counts and keeps the chain.</div>
+        <div><strong>Never miss twice.</strong> One gap is noise. Two in a row starts a new pattern.</div>
+        <div><strong>Plan the obstacle.</strong> “If I’m wiped out, then I do the tiny version.” Decide it now, not at 9 pm.</div>
+      </div>
+      <a class="hb-howto-link" href="javascript:void(0)" onclick="showView('library')">Read: Building Habits That Last</a>
+    </div>
+  </div>
+</section>
+
+<section class="view" id="view-calendar">
+  <div class="cal-bg-layer" id="cal-bg-layer"></div>
+  <div class="cal-shell">
+    <div class="cal-topbar">
+      <div class="cal-sub-left">
+        <div class="cal-nav-btns" role="group" aria-label="Date navigation">
+          <button class="cal-nav-btn" onclick="calStep(-1)" aria-label="Previous">‹</button>
+          <button class="cal-nav-btn cal-today-btn" onclick="calGoToday()">TODAY</button>
+          <button class="cal-nav-btn" onclick="calStep(1)" aria-label="Next">›</button>
+          <button class="cal-nav-btn cal-now-btn" id="cal-now-btn" onclick="calJumpNow()" title="Jump to the current time" aria-label="Jump to the current time"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-target"/></svg></button>
+        </div>
+        <div class="cal-title" id="cal-title" aria-live="polite">—</div>
+        <span class="prime-time-badge" id="prime-time-badge" style="display:none"></span>
+      </div>
+      <div class="cal-mode-tog" role="group" aria-label="Calendar view">
+        <button class="cal-mode-btn" id="cal-mode-day" onclick="calSetMode('day')">DAY</button>
+        <button class="cal-mode-btn" id="cal-mode-week" onclick="calSetMode('week')">WEEK</button>
+        <button class="cal-mode-btn" id="cal-mode-month" onclick="calSetMode('month')">MONTH</button>
+      </div>
+      <div class="cal-sub-right">
+        <button class="cal-add-btn" onclick="openEventModal()">+ Event</button>
+        <button class="cal-nav-btn cal-bg-btn cal-life-btn on" id="cal-life-btn" onclick="calToggleLife()" title="Show or hide chores and routines so you can see just your work">◌ LIFE</button>
+        <button class="cal-nav-btn cal-notif-btn" id="cal-notif-btn" onclick="requestNotifManually()" title="Click to enable/test reminders."><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-bell"/></svg><span class="lbl-opt">Reminders</span></button>
+        <div class="cal-canvas-wrap">
+          <button class="cal-nav-btn cal-bg-btn cal-canvas-btn" id="cal-canvas-btn" aria-haspopup="menu" aria-expanded="false" aria-controls="cal-canvas-menu" aria-label="Canvas styling: background and palette" title="Background and colour palette"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sliders"/></svg><span class="lbl-opt">Canvas</span></button>
+          <div class="cal-canvas-menu" id="cal-canvas-menu" role="menu">
+            <button role="menuitem" onclick="openBgModal()"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-image"/></svg><span>Background<span class="cm-sub">Picture behind the calendar</span></span></button>
+            <button role="menuitem" onclick="openPalModal()"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-palette"/></svg><span>Palette<span class="cm-sub">Colours for your task blocks</span></span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cal-day-tabs" id="cal-day-tabs"></div>
+    <div class="cal-body">
+      <div class="cal-sidebar">
+        <div id="tracy-strip-calendar"></div>
+        <div id="tracy-insight-calendar"></div>
+        <div class="cal-sidebar-title">Life &amp; chores</div>
+        <div class="cal-life-chips" id="cal-life-chips"></div>
+        <div class="cal-sidebar-title">Unscheduled Tasks</div>
+        <div id="cal-sidebar-list"></div>
+        <div class="cal-legend-actual" title="A thin coloured strip at the left edge of each day marks real logged focus time. Compare it against the planned blocks to see where your day actually went."><span class="swatch"></span><span>Thin strip = time you actually focused</span></div>
+      </div>
+      <div class="cal-grid-wrap" id="cal-grid-wrap">
+        <div class="cal-grid" id="cal-grid"></div>
+      </div>
+      <div class="cal-month-wrap" id="cal-month-wrap">
+        <div class="cal-month-dow-row" id="cal-month-dow-row"></div>
+        <div class="cal-month-grid" id="cal-month-grid"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="view" id="view-notes">
+  <div class="np-shell">
+    <div class="np-col np-folders">
+      <div class="np-sec-title">Folders <button class="np-add-btn" onclick="npCreateFolder()" title="New folder">+</button></div>
+      <div id="np-folder-list"></div>
+      <div class="np-backup-link" style="margin-top:auto;padding-top:14px;">Back up all your notes from <button type="button" onclick="openProfilePanel()">Profile → Your data</button>.</div>
+    </div>
+    <div class="np-col np-list">
+      <div class="np-sec-title"><span id="np-list-title">All Notes</span> <button class="np-add-btn" onclick="npCreateNote()" title="New note">+</button></div>
+      <div id="np-note-list"></div>
+    </div>
+    <div class="np-col np-editor-col" id="np-editor-col">
+      <div class="np-noselect" id="np-noselect">Select a note, or create a new one to get started.</div>
+      <div id="np-editor-wrap" style="display:none;flex-direction:column;flex:1;min-height:0;">
+        <div class="np-editor-head">
+          <input class="np-title-in" id="np-title" placeholder="Untitled note" oninput="npTitleChanged()">
+          <span class="np-link-badge" id="np-link-badge"></span>
+          <button class="np-note-del-btn" onclick="npDeleteNote()">DELETE</button>
+        </div>
+        <div class="np-editor-body">
+          <div class="rte-toolbar" id="np-toolbar"></div>
+          <div class="np-content" id="np-content" contenteditable="true" data-placeholder="Start writing…" oninput="npContentChanged()"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<div id="lib-addbook-overlay" onclick="if(event.target===this)libCloseAddBookModal()">
+  <div class="evt-modal lib-addbook-modal">
+    <div class="evt-head">
+      <div class="bg-modal-title">ADD A BOOK</div>
+      <button class="evt-close" onclick="libCloseAddBookModal()">✕</button>
+    </div>
+    <div class="evt-body">
+      <div class="bg-sec-lbl">How this works</div>
+      <ol class="lib-addbook-steps">
+        <li>Copy the prompt below.</li>
+        <li>Paste it into any AI chat you already use (ChatGPT, Gemini, Claude…), then attach or paste in the book — a PDF works best — in that same chat.</li>
+        <li>Copy the JSON it gives back and paste it into the box below.</li>
+      </ol>
+      <button class="cal-nav-btn lib-addbook-copybtn" id="lib-addbook-copy-btn" onclick="libCopyAddBookPrompt()"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-clipboard"/></svg> COPY THE PROMPT</button>
+      <div class="bg-sec-lbl">Paste the AI's JSON here</div>
+      <textarea class="lib-addbook-textarea" id="lib-addbook-textarea" placeholder='{ "title": "…", "author": "…", "chapters": [ … ] }'></textarea>
+      <div class="lib-addbook-error" id="lib-addbook-error" style="display:none"></div>
+      <div class="bg-hint">Stored only in this browser, like everything else in BLOC — nothing here is uploaded anywhere. Written entirely in your AI's own words rather than copied from the book, so there's nothing to worry about reproducing.</div>
+    </div>
+    <div class="evt-foot">
+      <button class="evt-cancel" onclick="libCloseAddBookModal()">CANCEL</button>
+      <button class="evt-save" style="flex:1;" onclick="libSubmitAddBook()">ADD TO SHELF</button>
+    </div>
+  </div>
+</div>
+<div class="overlay" id="warn-overlay">
+  <div class="modal">
+    <div class="modal-icon"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-alert"/></svg> </div>
+    <div class="modal-title">BLOCK NOT DONE</div>
+    <div class="modal-body" id="warn-body">—</div>
+    <div class="modal-btns">
+      <button class="btn-pause-confirm" onclick="confirmPause()">Pause it</button>
+      <button class="btn-keep" onclick="keepGoing()">KEEP GOING →</button>
+    </div>
+  </div>
+</div>
+<div class="overlay" id="fit-overlay">
+  <div class="modal fit-modal">
+    <div class="modal-title fit-title">TODAY’S FIT CHECK</div>
+    <div class="modal-body fit-body" id="fit-body">—</div>
+    <div class="modal-btns fit-btns" id="fit-btns"></div>
+  </div>
+</div>
+<div class="panel-backdrop" id="hist-backdrop" onclick="closeHist()"></div>
+<div class="side-panel" id="hist-panel">
+  <div class="panel-close" onclick="closeHist()">✕ CLOSE</div>
+  <div class="hist-title">LOG</div>
+  <div class="hist-meta" id="hist-meta">0 sessions</div>
+  <div class="hist-toolbar" id="hist-toolbar">
+    <button class="hist-tool-btn" id="hist-select-btn" onclick="toggleHistSelect()">SELECT</button>
+    <button class="hist-tool-btn" onclick="openBackfill()" title="Log a past day you forgot to track"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-timer"/></svg> BACKFILL A DAY</button>
+    <button class="hist-tool-btn danger" id="hist-clear-btn" onclick="clearAllSessions()" style="display:none">CLEAR ALL</button>
+    <div style="flex:1"></div>
+    <button class="hist-tool-btn" id="hist-delete-sel-btn" onclick="deleteSelected()" style="display:none">DELETE SELECTED</button>
+    <button class="hist-tool-btn" id="hist-cancel-sel-btn" onclick="cancelHistSelect()" style="display:none">CANCEL</button>
+  </div>
+  <div id="hist-list"></div>
+</div>
+<div class="toast" id="toast"></div>
+<div id="daily-reset-overlay">
+  <div class="reset-modal">
+    <div class="reset-modal-title">NEW DAY</div>
+    <div class="reset-modal-sub">Yesterday had unfinished tasks — re-evaluate them</div>
+    <div class="reset-task-list" id="reset-task-list"></div>
+    <div class="reset-actions">
+      <button class="reset-btn" onclick="dailyRollover('keep')"><span class="reset-icon">→</span><div class="reset-btn-label">ROLL OVER<div class="reset-btn-sub">Keep all tasks at their current priority</div></div></button>
+      <button class="reset-btn" onclick="dailyRollover('demote')"><span class="reset-icon">↓</span><div class="reset-btn-label">DEMOTE<div class="reset-btn-sub">A→B, B→C, C→D (re-evaluate daily)</div></div></button>
+      <button class="reset-btn" onclick="dailyRollover('archive')"><span class="reset-icon">✕</span><div class="reset-btn-label">ARCHIVE / CLEAR<div class="reset-btn-sub">Remove all undone tasks — start fresh</div></div></button>
+    </div>
+  </div>
+</div>
+<div id="est-overlay">
+  <div class="est-modal">
+    <div class="est-modal-title">TIME ESTIMATE</div>
+    <div class="est-presets">
+      <div class="est-preset" data-m="15">15m</div>
+      <div class="est-preset" data-m="30">30m</div>
+      <div class="est-preset" data-m="45">45m</div>
+      <div class="est-preset" data-m="60">1h</div>
+      <div class="est-preset" data-m="90">1.5h</div>
+      <div class="est-preset" data-m="120">2h</div>
+    </div>
+    <div class="est-custom">
+      <label>Custom (min):</label>
+      <input class="num-in" id="est-custom-val" type="number" min="5" max="480" value="30" style="width:66px;font-size:15px;padding:5px;">
+    </div>
+    <div id="est-suggest" style="margin-top:10px;font-size:11px;color:var(--muted2);line-height:1.5;"></div>
+    <div class="est-btns">
+      <button class="est-cancel" onclick="closeEstModal()">CANCEL</button>
+      <button class="est-confirm" onclick="confirmEst()">SET →</button>
+    </div>
+  </div>
+</div>
+
+
+
+<footer class="app-foot" id="app-foot"><button type="button" onclick="openLegal('privacy')">Privacy</button><span class="sep">·</span><button type="button" onclick="openLegal('terms')">Terms</button><span class="sep">·</span><span>BLOC</span></footer>
+<div id="evt-overlay" onclick="if(event.target===this)closeEventModal()">
+  <div class="evt-modal">
+    <div class="evt-head">
+      <input class="evt-title-in" id="evt-title" placeholder="Event title…">
+      <button class="evt-close" onclick="closeEventModal()">✕</button>
+    </div>
+    <div class="evt-body">
+      <div class="evt-kind" role="group" aria-label="What kind of event is this?">
+        <button type="button" class="evt-kind-btn on" id="evt-kind-work" onclick="evtSetKind('work')"><b>Work</b><small>Tasks, meetings, focus</small></button>
+        <button type="button" class="evt-kind-btn" id="evt-kind-life" onclick="evtSetKind('life')"><b>Life</b><small>Chores, self-care, routines</small></button>
+      </div>
+      <div class="evt-life-picks" id="evt-life-picks" style="display:none;"></div>
+      <div class="evt-row">
+        <span class="evt-lbl"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-calendar"/></svg></span>
+        <div class="evt-field"><input type="date" class="evt-date-in" id="evt-date"></div>
+      </div>
+      <div class="evt-row">
+        <span class="evt-lbl"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-timer"/></svg></span>
+        <div class="evt-field"><input type="time" class="evt-time-in" id="evt-start"></div>
+        <span class="evt-to">to</span>
+        <div class="evt-field"><input type="time" class="evt-time-in" id="evt-end"></div>
+      </div>
+      <div class="evt-row">
+        <span class="evt-lbl">↻</span>
+        <div class="evt-field">
+          <select class="evt-sel" id="evt-repeat" onchange="evtRepeatChanged()">
+            <option value="none">Doesn't repeat</option>
+            <option value="daily">Daily</option>
+            <option value="weekdays">Every weekday (Mon–Fri)</option>
+            <option value="weekly">Weekly on this day</option>
+            <option value="monthly">Monthly on this date</option>
+            <option value="yearly">Annually on this date</option>
+            <option value="custom">Custom…</option>
+          </select>
+        </div>
+      </div>
+      <div class="evt-row" id="evt-recur-custom" style="display:none;">
+        <span class="evt-lbl"></span>
+        <div class="evt-field" style="background:var(--surf3);border:1px solid var(--bdr2);padding:10px;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:9px;">
+            <span style="font-size:10px;letter-spacing:1px;color:var(--muted2);text-transform:uppercase;">Every</span>
+            <input class="num-in" id="evt-recur-interval" type="number" min="1" max="365" value="1" style="width:48px;font-size:12px;padding:5px;">
+            <select class="evt-sel" id="evt-recur-unit" style="width:auto;flex:none;" onchange="evtRecurUnitChanged()">
+              <option value="day">day(s)</option>
+              <option value="week">week(s)</option>
+              <option value="month">month(s)</option>
+            </select>
+          </div>
+          <div id="evt-recur-weekdays" style="display:none;margin-bottom:9px;">
+            <div style="display:flex;gap:4px;flex-wrap:wrap;" id="evt-recur-weekday-row"></div>
+          </div>
+          <div style="font-size:10px;letter-spacing:1px;color:var(--muted2);text-transform:uppercase;margin-bottom:6px;">Ends</div>
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <label style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--txt2);cursor:pointer;">
+              <input type="radio" name="evt-recur-end" value="never" checked onchange="evtRecurEndChanged()"> Never
+            </label>
+            <label style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--txt2);cursor:pointer;">
+              <input type="radio" name="evt-recur-end" value="date" onchange="evtRecurEndChanged()"> On
+              <input type="date" class="evt-date-in" id="evt-recur-end-date" style="width:auto;flex:none;padding:5px 7px;" onfocus="document.querySelector('input[name=evt-recur-end][value=date]').checked=true;evtRecurEndChanged()">
+            </label>
+            <label style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--txt2);cursor:pointer;">
+              <input type="radio" name="evt-recur-end" value="count" onchange="evtRecurEndChanged()"> After
+              <input class="num-in" id="evt-recur-end-count" type="number" min="1" max="999" value="10" style="width:48px;font-size:12px;padding:5px;" onfocus="document.querySelector('input[name=evt-recur-end][value=count]').checked=true;evtRecurEndChanged()"> occurrences
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="evt-row">
+        <span class="evt-lbl"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-bell"/></svg></span>
+        <div class="evt-field">
+          <select class="evt-sel" id="evt-reminder">
+            <option value="0">No notification</option>
+            <option value="5">5 minutes before</option>
+            <option value="10" selected>10 minutes before</option>
+            <option value="30">30 minutes before</option>
+            <option value="60">1 hour before</option>
+          </select>
+          <div class="bg-hint">Reminders only fire while this BLOC tab is open and notifications are allowed — that's a browser limit, not something we can work around.</div>
+        </div>
+      </div>
+      <div class="evt-row" id="evt-link-row">
+        <span class="evt-lbl"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-link"/></svg></span>
+        <div class="evt-field">
+          <select class="evt-sel" id="evt-task-link" onchange="evtTaskLinkChanged()">
+            <option value="">— Not linked to a task —</option>
+          </select>
+        </div>
+      </div>
+      <div class="evt-row" id="evt-color-row">
+        <span class="evt-lbl">●</span>
+        <div class="evt-field">
+          <div class="evt-colors" id="evt-colors"></div>
+          <div class="evt-colors" id="evt-colors-ext" style="margin-top:7px;"></div>
+          <div class="evt-custom-row">
+            <input type="color" id="evt-color-custom" value="#e6a118" oninput="evtPickCustomColor(this.value)">
+            <span class="evt-custom-lbl">Any color</span>
+            <button class="evt-cancel" style="font-size:10px;padding:5px 9px;margin-left:auto;" onclick="evtClearCustomColor()">USE CATEGORY COLOR</button>
+          </div>
+        </div>
+      </div>
+      <div class="evt-row">
+        <span class="evt-lbl"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-menu"/></svg></span>
+        <div class="evt-field" id="evt-notes-row"></div>
+      </div>
+      <div class="evt-row" id="evt-scope-row" style="display:none;">
+        <span class="evt-lbl">⧉</span>
+        <div class="evt-field" style="background:var(--surf3);border:1px solid var(--bdr2);padding:10px;">
+          <div style="font-size:10px;letter-spacing:1px;color:var(--muted2);text-transform:uppercase;margin-bottom:6px;">This is a repeating event — apply changes to</div>
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <label style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--txt2);cursor:pointer;">
+              <input type="radio" name="evt-edit-scope" value="this" checked onchange="evtScopeChanged()"> Just this occurrence
+            </label>
+            <label style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--txt2);cursor:pointer;">
+              <input type="radio" name="evt-edit-scope" value="all" onchange="evtScopeChanged()"> The entire series
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="evt-foot">
+      <button class="evt-save" onclick="saveEvent()">SAVE</button>
+      <button class="evt-cancel" id="evt-dup-btn" onclick="duplicateEvent()" style="display:none;">DUPLICATE</button>
+      <button class="evt-del" id="evt-del-btn" onclick="deleteEvent()" style="display:none;">DELETE</button>
+      <button class="evt-cancel" onclick="closeEventModal()">CANCEL</button>
+    </div>
+  </div>
+</div>
+
+<div id="bg-overlay" onclick="if(event.target===this)closeBgModal()">
+  <div class="evt-modal">
+    <div class="evt-head">
+      <div class="bg-modal-title">CALENDAR BACKGROUND</div>
+      <button class="evt-close" onclick="closeBgModal()">✕</button>
+    </div>
+    <div class="evt-body">
+      <div class="bg-sec-lbl">Presets</div>
+      <div class="bg-preset-row" id="bg-preset-row"></div>
+
+      <div class="bg-sec-lbl">Upload an image</div>
+      <button class="cal-nav-btn bg-upload-btn" onclick="$('bg-file-input').click()">CHOOSE FILE FROM DEVICE…</button>
+      <input type="file" id="bg-file-input" accept="image/*" style="display:none" onchange="handleBgFile(event)">
+      <div class="bg-hint">Stored locally in your browser. Large photos may not fit — a URL works better for big images.</div>
+
+      <div class="bg-sec-lbl">Or paste an image URL</div>
+      <div class="bg-url-row">
+        <input type="text" class="evt-date-in" id="bg-url-in" placeholder="https://example.com/photo.jpg">
+        <button class="cal-nav-btn" onclick="applyBgUrl()">SET</button>
+      </div>
+
+      <div class="bg-sec-lbl">Darken overlay <span class="bg-dim-val" id="bg-dim-val">45%</span></div>
+      <div class="bg-dim-row">
+        <input type="range" id="bg-dim-range" min="0" max="90" value="45" oninput="bgDimChanged(this.value)">
+      </div>
+    </div>
+    <div class="evt-foot">
+      <button class="evt-cancel" style="flex:1;" onclick="clearBg()">RESET TO DEFAULT</button>
+      <button class="evt-save" style="flex:1;" onclick="closeBgModal()">DONE</button>
+    </div>
+  </div>
+</div>
+
+<div id="pal-overlay" onclick="if(event.target===this)closePalModal()">
+  <div class="evt-modal">
+    <div class="evt-head">
+      <div class="bg-modal-title">TASK COLOR PALETTE</div>
+      <button class="evt-close" onclick="closePalModal()" aria-label="Close">✕</button>
+    </div>
+    <div class="evt-body">
+      <div class="bg-hint" style="margin-bottom:4px;">Colors for your A–E task blocks on the calendar. The last swatch is the glass look used for life chores.</div>
+      <div class="pal-grid" id="pal-grid"></div>
+    </div>
+    <div class="evt-foot">
+      <button class="evt-save" style="flex:1;" onclick="closePalModal()">DONE</button>
+    </div>
+  </div>
+</div>
+
+<div id="theme-overlay" onclick="if(event.target===this)closeThemeModal()">
+  <div class="evt-modal">
+    <div class="evt-head">
+      <div class="bg-modal-title">APP THEME</div>
+      <button class="evt-close" onclick="closeThemeModal()">✕</button>
+    </div>
+    <div class="evt-body">
+      <div class="bg-hint" style="margin-bottom:14px;">Pick whatever feels calmest to work in — this changes the color palette across the whole app (tasks, calendar, and notes), and is saved to this browser.</div>
+      <div class="theme-grid" id="theme-grid"></div>
+    </div>
+    <div class="evt-foot">
+      <button class="evt-save" style="flex:1;" onclick="closeThemeModal()">DONE</button>
+    </div>
+  </div>
+</div>
+
+<div class="kbd-hint" id="kbd-hint">
+  <div class="kbd-hint-title">Shortcuts</div>
+  <div class="kbd-hint-row"><kbd>N</kbd> New task</div>
+  <div class="kbd-hint-row"><kbd>Q</kbd> Quick capture</div>
+  <div class="kbd-hint-row"><kbd>F</kbd> Focus block</div>
+  <div class="kbd-hint-row"><kbd>W</kbd> Weekly</div>
+  <div class="kbd-hint-row"><kbd>H</kbd> Habits</div>
+  <div class="kbd-hint-row"><kbd>C</kbd> Calendar</div>
+  <div class="kbd-hint-row"><kbd>R</kbd> Rulebook (A–E)</div>
+  <div class="kbd-hint-row"><kbd>G</kbd> Animated guide</div>
+  <div class="kbd-hint-row"><kbd>Z</kbd> Zen mode</div>
+  <div class="kbd-hint-row"><kbd>Space</kbd> Fullscreen <span style="color:var(--muted2);">(pause in Timer)</span></div>
+  <div class="kbd-hint-row"><kbd>1–5</kbd> Jump to section</div>
+</div>
+
+
+<button class="bai-fab" id="bai-fab" title="Wojak — drag to move, click to open" aria-label="Open Wojak">◆</button>
+<button class="js-fab" id="js-fab" title="Start a timer immediately — no task, mode, or duration to pick first. Drag to move, tap to start." aria-label="Start studying now">
+  <span id="js-fab-label">I'M STUDYING →</span>
+</button>
+<div class="bai-panel" id="bai-panel">
+  <div class="bai-head" id="bai-head">
+    <div class="bai-head-txt">
+      <div class="bai-head-title">Wojak</div>
+      <div class="bai-head-sub" id="bai-head-sub">Ask about what you’re stuck on</div>
+    </div>
+    <button class="bai-icon-btn" onclick="baiOpenKeyManager()" title="Gemini keys (primary + backup)" aria-label="Gemini keys"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sliders"/></svg> </button>
+    <button class="bai-icon-btn" onclick="baiToggle(false)" title="Close" aria-label="Close"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-x"/></svg></button>
+  </div>
+  <div class="bc-bar" id="bai-bar"></div>
+  <div class="bc-hist" id="bai-hist"></div>
+  <div class="bai-chips" id="bai-chips"></div>
+  <div class="bai-messages" id="bai-messages"></div>
+  <div class="bai-input-row">
+    <input class="bai-input" id="bai-input" type="text" placeholder="Describe what’s going on…" autocomplete="off" onkeydown="if(event.key==='Enter')baiSend()">
+    <button class="bai-send-btn" onclick="baiSend()" title="Send">→</button>
+  </div>
+</div>
+
+<div id="gk-overlay" onclick="if(event.target===this)baiCloseKeyManager()">
+  <div class="evt-modal gk-modal" role="dialog" aria-label="Gemini keys">
+    <div class="evt-head">
+      <div class="bg-modal-title">GEMINI KEYS</div>
+      <button class="evt-close" onclick="baiCloseKeyManager()" aria-label="Close">✕</button>
+    </div>
+    <div class="evt-body">
+      <div class="bg-hint" style="margin-bottom:14px">Add a backup key and BLOC switches to it automatically when the first key is rejected, out of free quota, or Gemini is busy — so you rarely see an error.</div>
+      <details class="gkg" id="gk-guide">
+        <summary class="gkg-btn">How do I get a key?</summary>
+        <div class="gkg-body" id="gk-guide-body"></div>
+      </details>
+      <div class="bg-sec-lbl">Primary key</div>
+      <div class="gk-row"><input class="gk-input" id="gk-primary" type="password" autocomplete="off" spellcheck="false" placeholder="Paste your Gemini API key"><button class="evt-cancel gk-test" onclick="gkTest('primary')">TEST</button></div>
+      <div class="gk-status" id="gk-primary-status"></div>
+      <div class="bg-sec-lbl">Backup key <span class="gk-opt">(optional)</span></div>
+      <div class="gk-row"><input class="gk-input" id="gk-backup" type="password" autocomplete="off" spellcheck="false" placeholder="A second key, e.g. a family member's"><button class="evt-cancel gk-test" onclick="gkTest('backup')">TEST</button></div>
+      <div class="gk-status" id="gk-backup-status"></div>
+      <div class="bg-hint">Stored only in this browser — never in the app file, and never included in backups. Your questions plus a short summary (open tasks, streak) go straight to Google with whichever key is used. <b>Only use someone else's key with their OK</b> — the usage counts against their account.</div>
+    </div>
+    <div class="evt-foot">
+      <button class="evt-cancel" id="gk-show" onclick="gkToggleShow()">SHOW KEYS</button>
+      <button class="evt-cancel" onclick="baiCloseKeyManager()">CANCEL</button>
+      <button class="evt-save" style="flex:1;" onclick="gkSave()">SAVE</button>
+    </div>
+  </div>
+</div>
+
+<div id="pz-overlay" onclick="if(event.target===this)pzClose()">
+  <div class="evt-modal pz-modal">
+    <div class="evt-head">
+      <div class="bg-modal-title">PERSONALIZE THE WORDING</div>
+      <button class="evt-close" onclick="pzClose()">✕</button>
+    </div>
+    <div class="evt-body">
+      <div class="pz-status" id="pz-status"></div>
+      <div class="bg-hint" style="margin-bottom:12px">Same A–E method, explained in your own field's language. Your AI already knows you and rewrites the examples; BLOC never changes how it works.</div>
+      <div class="bg-sec-lbl">1 · Copy the prompt, paste it into your AI</div>
+      <button class="cal-nav-btn lib-addbook-copybtn" id="pz-copy-btn" onclick="pzCopyPrompt()"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-clipboard"/></svg> COPY THE PROMPT</button>
+      <div class="bg-hint" style="margin:-8px 0 14px">Use the AI chat you normally talk to — it already knows your work, so there's nothing to fill in.</div>
+      <div class="bg-sec-lbl">2 · Paste the AI's answer here</div>
+      <textarea class="lib-addbook-textarea" id="pz-paste" placeholder='{ "A": { "name": "…", "desc": "…", "line": "…", "test": "…", "eg": "…", "trap": "…" }, "B": { … } }'></textarea>
+      <div class="lib-addbook-error pz-msg" id="pz-msg" style="display:none"></div>
+      <div class="bg-hint">The AI only sends back plain text, never code, and it is checked before use. Stored only in this browser. Works with ChatGPT, Gemini, Claude — any chat.</div>
+    </div>
+    <div class="evt-foot">
+      <button class="evt-cancel" id="pz-reset-btn" onclick="pzReset()" style="display:none">RESET</button>
+      <button class="evt-cancel" onclick="pzClose()">CLOSE</button>
+      <button class="evt-save" style="flex:1;" onclick="pzSubmit()">APPLY</button>
+    </div>
+  </div>
+</div>
+
+<div id="tz-overlay">
+  <div class="evt-modal tz-modal">
+    <div class="evt-head">
+      <div class="bg-modal-title">CHOOSE YOUR TIME ZONE</div>
+    </div>
+    <div class="evt-body">
+      <div class="bg-hint" style="margin-bottom:12px">BLOC plans your day, streaks and calendar around this. Pick the place where you live — it's saved once and stays put, so a VPN or a trip won't move your day.</div>
+      <div class="bg-sec-lbl">YOUR TIME ZONE</div>
+      <select class="settings-select" id="tz-select" onchange="tzPreviewUpdate()"></select>
+      <div class="tz-preview" id="tz-preview"></div>
+      <div class="bg-hint">We guessed this from your device. If the time above looks right, just continue. You can change it any time in Settings.</div>
+    </div>
+    <div class="evt-foot">
+      <button class="evt-save" style="flex:1;" onclick="tzConfirm()">CONTINUE →</button>
+    </div>
+  </div>
+</div>
+
+<div id="acct-overlay" onclick="if(event.target===this)closeAuthModal()"><div class="evt-modal acct-modal dlg-auth" role="dialog" aria-modal="true" aria-labelledby="acct-title"><div class="evt-head"><div class="bg-modal-title" id="acct-title">SIGN IN</div><button type="button" class="evt-close" onclick="closeAuthModal()" aria-label="Close">✕</button></div><div class="evt-body"><div class="bg-hint acct-note" id="acct-note" style="display:none" role="status"></div><div id="acct-form"><div class="dlg-seg" role="tablist" aria-label="Account" style="margin-bottom:16px"><button type="button" role="tab" id="acct-tab-login" aria-selected="true" aria-controls="acct-formel">Sign in</button><button type="button" role="tab" id="acct-tab-signup" aria-selected="false" aria-controls="acct-formel">Create account</button></div><form id="acct-formel" novalidate><div class="dlg-field"><label for="acct-email">Email</label><input id="acct-email" type="email" inputmode="email" autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false" maxlength="254" placeholder="you@example.com" aria-describedby="acct-email-err"><div class="dlg-ferr" id="acct-email-err" role="alert"></div></div><div class="dlg-field"><label for="acct-pass">Password</label><div class="dlg-pw"><input id="acct-pass" type="password" autocomplete="current-password" maxlength="128" placeholder="8 characters or more" aria-describedby="acct-pass-err acct-caps"><button type="button" class="dlg-pwt" id="acct-pwt" aria-pressed="false" aria-label="Show password">Show</button></div><div class="dlg-caps" id="acct-caps" hidden>Caps Lock is on.</div><div class="dlg-meter" id="acct-meter" data-s="0" hidden><div class="dlg-meter-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="dlg-meter-l"><span id="acct-meter-lbl" aria-live="polite">Strength</span><span id="acct-meter-len"></span></div><ul class="dlg-meter-tips" id="acct-tips"></ul></div><div class="dlg-ferr" id="acct-pass-err" role="alert"></div></div><div class="dlg-field" id="acct-confirm-wrap" hidden><label for="acct-pass2">Confirm password</label><input id="acct-pass2" type="password" autocomplete="new-password" maxlength="128" aria-describedby="acct-pass2-err"><div class="dlg-ferr" id="acct-pass2-err" role="alert"></div></div><div id="acct-consent-wrap" hidden><label class="dlg-check"><input type="checkbox" id="acct-consent" aria-describedby="acct-consent-err"><span>I am 13 or older, I agree to the <button type="button" class="dlg-link" data-legal="terms">Terms of Use</button> and I have read the <button type="button" class="dlg-link" data-legal="privacy">Privacy Policy</button>.</span></label><div class="dlg-ferr" id="acct-consent-err" role="alert" style="margin:-6px 0 12px 28px"></div></div><label class="dlg-check" id="acct-remember-wrap"><input type="checkbox" id="acct-remember" checked><span>Remember my email on this device</span></label><div class="lib-addbook-error acct-msg" id="acct-msg" role="alert" style="display:none"></div><div class="dlg-wait" id="acct-wait" hidden role="status"></div><button type="submit" hidden tabindex="-1" aria-hidden="true"></button></form><div class="dlg-reassure" id="acct-reassure">An account is optional. Without one, everything stays in this browser. With one, you can back up and sync. We email you a confirmation link when you create an account, and nothing else.</div><button type="button" class="acct-switch" id="acct-switch" hidden></button><nav class="legal-links"><button type="button" data-legal="privacy">Privacy</button><span>·</span><button type="button" data-legal="terms">Terms</button></nav></div><div id="acct-sent" class="dlg-sent" hidden><div style="font-size:30px" aria-hidden="true">✉</div><b>Check your email</b><div class="em" id="acct-sent-em"></div><p>We sent a confirmation link. Open it, then come back and sign in. You cannot sign in until the address is confirmed. If nothing arrives in a few minutes, check spam, or make sure the address is spelled correctly.</p><button type="button" class="dlg-btn pri" id="acct-sent-go" style="width:100%">Go to sign in</button></div><div id="acct-status" style="display:none"><div class="bg-sec-lbl">SIGNED IN AS</div><div class="acct-email-line" id="acct-who"></div><div class="acct-usage" id="acct-usage"></div><div class="lib-addbook-error acct-msg" id="acct-msg2" role="alert" style="display:none"></div><button type="button" class="dlg-btn pri" id="acct-profile-btn" style="width:100%;margin-top:14px">Open your profile</button></div></div><div class="evt-foot"><button type="button" class="evt-cancel" id="acct-logout" onclick="acctLogout()" style="display:none">SIGN OUT</button><button type="button" class="evt-cancel" id="acct-sync" onclick="acctSyncNow()" style="display:none">SYNC NOW</button><button type="button" class="evt-save" id="acct-go" style="flex:1;" onclick="acctSubmit()">SIGN IN</button></div></div></div>
+
+<div id="legal-overlay" onclick="if(event.target===this)closeLegal()"><div class="dlg-sheet lg-modal" role="dialog" aria-modal="true" aria-labelledby="legal-title"><div class="lg-top"><div><div class="dlg-h" id="legal-title" style="font-size:26px">PRIVACY POLICY</div><div class="lg-meta" id="lg-meta"></div></div><button type="button" class="dlg-x" onclick="closeLegal()" aria-label="Close">✕</button></div><div class="lg-tabs" role="tablist" aria-label="Legal documents"><button type="button" role="tab" class="lg-tab" id="legal-tab-privacy" aria-selected="true" onclick="openLegal('privacy')">Privacy Policy</button><button type="button" role="tab" class="lg-tab" id="legal-tab-terms" aria-selected="false" onclick="openLegal('terms')">Terms of Use</button><span class="lg-spacer"></span></div><div class="lg-grid"><div id="lg-toc-mount" style="min-height:0;display:flex;flex-direction:column"></div><div class="lg-scroll" id="lg-scroll" tabindex="0" aria-label="Document text"></div></div><div class="lg-foot"><span class="lg-note">This is a plain-language draft for a small product, not legal advice.</span><button type="button" class="dlg-btn" id="lg-dl">Download copy (.txt)</button><button type="button" class="dlg-btn" id="lg-ver">Version history</button></div></div></div>
+
+
+
+<script src="/assets/vendor/ollama.js"></script>
+<script src="/assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+/* one home per job: account in Profile, full backup in Profile, one add path in Tasks */
+
+/* Tasks: the header Add duplicates the inline add bar, so it hides there */
+body.on-tasks #ux-add{display:none!important}
+
+/* Planning tools toggle sits with the other task filters */
+#view-tasks .tools-seg{margin-left:6px}
+#view-tasks #ux-tools-toggle{white-space:nowrap}
+body.focus-mode #ux-tools-toggle{display:none!important}
+
+/* Account & sync: the old Settings card, now living inside Profile */
+#pf-acct .set-card.is-moved{background:transparent;border:0;padding:0;margin:0;box-shadow:none}
+#pf-acct .is-moved .set-card-ico,#pf-acct .is-moved .set-card-title{display:none}
+#pf-acct .is-moved .set-card-head{margin-bottom:10px}
+#pf-acct .is-moved .set-btn-pair .set-secondary:not(#set-sync-now){display:none}
+#pf-acct-extra{margin-top:14px;padding-top:14px;border-top:1px solid var(--bdr)}
+#pf-acct-extra:empty{display:none;}
+
+/* Settings: a pointer instead of a second copy */
+.set-link-card{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:10px 12px}
+.set-link-card .set-card-headtxt{min-width:0}
+.set-link-card .set-card-title{white-space:nowrap}
+.set-link-card .settings-acct-state{letter-spacing:0;line-height:1.4;word-break:normal;overflow-wrap:normal;white-space:normal}
+.set-link-card .set-secondary{grid-column:1 / -1;width:100%;white-space:nowrap}
+.set-link-note{font-size:12px;color:var(--muted);line-height:1.5;margin:0 0 10px}
+.set-link-btn{background:none;border:0;padding:0;color:var(--amber);text-decoration:underline;font:500 13px var(--sans);cursor:pointer}
+.np-backup-link{font-size:12px;color:var(--muted);line-height:1.5}
+.np-backup-link button{background:none;border:0;padding:0;color:var(--amber);text-decoration:underline;font:inherit;cursor:pointer}

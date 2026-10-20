@@ -1,0 +1,39 @@
+/* End of Day modal fits & scrolls; calmer page bottom ===== */
+
+/* A) Every centered modal may never outgrow the window: it scrolls inside itself */
+.reflect-modal,.reset-modal,.est-modal,.evt-modal,.energy-modal,.backfill-modal,.hob-modal,.hh-modal{
+  max-height:calc(100vh - 48px);max-height:calc(100dvh - 48px);overflow-y:auto;-webkit-overflow-scrolling:touch}
+#reflection-overlay{padding:24px 16px}
+
+/* B) End of Day: shorter, sans, rounded */
+.reflect-modal{padding:28px 30px 26px;border-radius:18px;border-color:color-mix(in srgb,var(--amber) 45%,var(--bdr2));
+  box-shadow:0 24px 70px -20px rgba(0,0,0,.6)}
+.reflect-title{font-size:28px;letter-spacing:2px;margin-bottom:2px}
+.reflect-sub{font-size:12px;letter-spacing:1.2px;margin-bottom:20px}
+.reflect-field{margin-bottom:16px}
+.reflect-lbl,.reflect-score-lbl{font:600 13px var(--sans);letter-spacing:0;text-transform:none;color:var(--txt2);margin-bottom:8px}
+.reflect-score-lbl{margin:0 6px 0 0}
+.reflect-ta{font:400 14px/1.5 var(--sans);border-radius:12px;padding:12px 14px;min-height:64px;
+  border-color:color-mix(in srgb,var(--bdr2) 70%,transparent)}
+.reflect-ta::placeholder{font-family:var(--sans)}
+.reflect-score{margin-bottom:18px;gap:8px}
+.score-star{font-size:22px;color:var(--amber)}
+.reflect-modal .backfill-chips{flex-direction:row;flex-wrap:wrap;gap:8px}
+.reflect-modal .backfill-chip{font:500 13px var(--sans);letter-spacing:0;text-transform:none;padding:8px 14px;border-radius:999px}
+.reflect-modal label[for="reflect-rest-day"]{font-size:13px!important}
+.reflect-btns{gap:10px;margin-top:8px}
+.reflect-btns .est-cancel{font:500 14px var(--sans);letter-spacing:0;text-transform:none;border-radius:12px;padding:12px}
+.reflect-btns .est-confirm{font:600 15px var(--sans)!important;letter-spacing:.2px!important;border-radius:12px;padding:12px}
+
+/* C) Page bottom (desktop): quote, then the action row, then legal: one tidy footer inside the task column */
+@media (min-width:761px){
+  #view-tasks{padding-bottom:8px}
+  #view-tasks .btm-bar{position:static;max-width:860px;margin:22px auto 0;padding:0 32px;background:none;
+    justify-content:flex-end;pointer-events:auto;transform:none}
+  .app-foot{padding:10px 20px 36px}
+}
+#view-tasks .tasks-wrap>#tracy-strip-tasks{margin:28px 0 0;padding-top:16px}
+#view-tasks .tasks-wrap>#tracy-strip-tasks .tracy-strip-attr,
+#view-tasks .tasks-wrap>#tracy-strip-tasks .tracy-strip-link{font:400 12px var(--sans);letter-spacing:0;text-transform:none;color:var(--muted)}
+#view-tasks .tasks-wrap>#tracy-strip-tasks .tracy-strip-link{text-decoration:none;padding:2px 8px;border-radius:999px}
+#view-tasks .tasks-wrap>#tracy-strip-tasks .tracy-strip-link:hover{color:var(--amber);background:var(--amber-lo)}

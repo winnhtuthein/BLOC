@@ -1,0 +1,35 @@
+/* early-access banner + founding-member offer.
+   Rules used here:
+   - The banner is in normal flow (first child of body), never absolute, so it pushes everything down.
+   - The fixed header and the other top-anchored layers follow it through two variables set by js/v23-beta-banner.js:
+       --beta-h   banner height (0px once dismissed)
+       --beta-off banner height minus scroll, floored at 0 (header top)
+   - Colour is deliberately NOT the app amber: indigo #1e1b4b with white text (about 15:1 contrast), so it reads as a notice. */
+
+#beta-banner{display:flex;align-items:center;justify-content:center;gap:16px;position:relative;z-index:40;background:#1e1b4b;color:#fff;padding:calc(10px + env(safe-area-inset-top,0px)) 56px 10px 20px;font:500 13px/1.45 var(--sans);text-align:center;border-bottom:1px solid #3730a3;}
+#beta-banner strong{font-weight:700;}
+#beta-banner .beta-x{position:absolute;right:12px;top:50%;transform:translateY(-50%);width:32px;height:32px;display:grid;place-items:center;background:transparent;border:0;border-radius:8px;color:#fff;cursor:pointer;}
+#beta-banner .beta-x:hover{background:rgba(255,255,255,.14);}
+#beta-banner .beta-x:focus-visible{outline:2px solid #fff;outline-offset:2px;}
+#beta-banner .beta-x svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;}
+#beta-banner .beta-claim{background:none;border:0;padding:0;margin-left:4px;color:#fff;font:inherit;font-weight:700;text-decoration:underline;text-underline-offset:3px;cursor:pointer;white-space:nowrap;}
+#beta-banner .beta-claim:hover{text-decoration-thickness:2px;}
+#beta-banner .beta-claim:focus-visible{outline:2px solid #fff;outline-offset:2px;border-radius:2px;}
+@media(max-width:640px){#beta-banner{font-size:12px;text-align:left;justify-content:flex-start;padding-left:14px;padding-right:48px;}}
+body.zen #beta-banner{display:none;}
+
+/* layers that were pinned to the top now follow the banner */
+.hdr{top:var(--beta-off,0px);}
+.date-bar{top:calc(60px + var(--beta-off,0px));}
+.cal-bg-layer{top:calc(60px + var(--beta-off,0px));}
+.cal-shell,.np-shell{height:calc(100vh - 60px - var(--beta-h,0px));}
+@media(max-width:640px){
+  .cal-shell,.np-shell{height:calc(100vh - var(--top) - var(--bottom-gap) - var(--beta-h,0px));height:calc(100dvh - var(--top) - var(--bottom-gap) - var(--beta-h,0px));}
+  .cal-bg-layer{top:calc(var(--top) + var(--beta-off,0px));}
+}
+
+/* the offer link on the welcome screen, and the signed-in states (html.is-founding is set by the founding-member script) */
+.welcome-founding{display:block;width:100%;margin-top:14px;background:none;border:0;padding:6px 4px;color:var(--amber);font:500 12px/1.5 var(--sans);text-align:center;cursor:pointer;text-decoration:underline;text-underline-offset:3px;position:relative;}
+html.is-founding .beta-claim,html.is-founding .welcome-founding,html.is-founding #set-founding-out{display:none;}
+#set-founding-in{display:none;}
+html.is-founding #set-founding-in{display:block;}

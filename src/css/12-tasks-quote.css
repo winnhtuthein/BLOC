@@ -1,0 +1,54 @@
+/* quiet quote line + softer task view ===== */
+
+/* 1) Quote banner: a slim, boxless line that barely takes space */
+.tasks-banner{max-width:860px;margin:12px auto 10px;padding:0 32px}
+.tasks-card{background:none;border:0;border-radius:0;overflow:visible}
+.tasks-card .tracy-strip{padding:2px 4px;gap:14px;opacity:.9;transition:opacity .2s}
+.tasks-card .tracy-strip:hover{opacity:1}
+.tasks-card .tracy-strip-mark{font-size:14px;opacity:.45}
+.tasks-card .tracy-strip p{font-size:13px;color:var(--muted2)}
+.tasks-card .tracy-strip-foot{gap:10px}
+.tasks-card .tracy-strip-attr{font:400 12px var(--sans);letter-spacing:0;color:var(--muted)}
+.tasks-card .tracy-strip-link{font:400 12px var(--sans);letter-spacing:0;color:var(--muted);text-decoration:none;padding:2px 8px;border-radius:999px;transition:background .15s,color .15s}
+.tasks-card .tracy-strip-link:hover,.tasks-card .tracy-strip-link:focus-visible{color:var(--amber);background:var(--amber-lo)}
+/* planning tools, when opened, become their own soft little panel under the line */
+.tasks-card .task-toolbar{margin:8px 0 0;padding:8px 12px;border:1px solid var(--bdr);border-radius:12px;
+  background:color-mix(in srgb,var(--surf2) 70%,transparent)}
+.tasks-card .task-toolbar .tt-btn,.tasks-card .task-toolbar button:not(.tasks-hide){border-radius:999px}
+
+/* 2) Add bar: friendlier corners, matched heights */
+.add-form{align-items:stretch}
+.add-input,.type-sel{border-radius:12px;border-color:color-mix(in srgb,var(--bdr2) 70%,transparent)}
+.btn-add{border-radius:12px;box-shadow:0 2px 8px -3px var(--amber-glo)}
+.plan-target{border-radius:12px}
+.plan-target .pt-indicator,.plan-target .pt-btn{border-radius:9px}
+
+/* 3) Sections: round all corners, lighter edge and shadow */
+.sec{border-left-width:3px;border-radius:14px;box-shadow:0 1px 3px rgba(0,0,0,.08),0 8px 18px -14px rgba(0,0,0,.25)}
+.sec-hdr{border-radius:11px 13px 0 0}
+.sec-body{padding-bottom:4px}
+
+/* 4) Task rows and their little controls */
+.ti{border-radius:10px;border-left-width:3px}
+.t-chk{border-radius:6px}
+.sub-tag{border-radius:6px}
+.t-expand{border-radius:8px}
+.t-recur,.t-est{border-radius:8px}
+.age-badge,.plan-badge{border-radius:999px}
+.sec[data-t="A"] .ti-wrap:first-child .ti::after{font-size:10px;letter-spacing:1.4px;padding:2px 9px;border-radius:999px;
+  font-weight:600;right:14px;top:-8px;opacity:.92}
+
+/* 5) Quick-add: solid hairline instead of a dashed box */
+.inline-in{border-style:solid;border-color:color-mix(in srgb,var(--bdr2) 60%,transparent);border-radius:10px;
+  background:color-mix(in srgb,var(--surf) 55%,transparent)}
+.inline-in:focus{border-color:var(--sc,var(--amber))}
+
+/* 6) New-here card and its buttons */
+.rb-intro{border-radius:14px;border-left-width:1px;border-color:color-mix(in srgb,var(--amber) 28%,var(--bdr2));
+  background:color-mix(in srgb,var(--amber) 5%,var(--surf2))}
+.rb-intro-btn{border-radius:10px}
+
+/* 7) Unsorted notice matches the softer shapes */
+#ux-unsorted{border-radius:12px}
+
+@media (max-width:640px){.tasks-banner{padding:0 16px}.tasks-card .tracy-strip{padding:2px 2px}}

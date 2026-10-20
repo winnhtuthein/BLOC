@@ -1,0 +1,84 @@
+/* Focus Block setup: one duration control, one task combo */
+
+.custom-row[hidden],#dur-save[hidden],.combo-list[hidden]{display:none!important}
+#focus-task-select{display:none!important}
+
+.presets .dur-pill{padding:2px}
+.presets .dur-pill>.preset{padding:7px 15px}
+.dur-custom{font-style:italic}
+.dur-custom.open{color:var(--amber)}
+.dur-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:7px}
+.dur-head .field-lbl{margin:0}
+.dur-edit[hidden]{display:none}
+.dur-edit{background:none;border:0;padding:2px 0;color:var(--muted2);font:500 12px var(--sans);cursor:pointer}
+.dur-edit:hover{color:var(--amber);text-decoration:underline}
+.presets .dur-pill>.chip-x{margin:0 2px 0 -4px;opacity:1}
+
+#custom-row{margin:-2px 0 14px;padding:10px 12px;background:var(--surf2);border:1px solid var(--bdr);border-radius:10px;gap:8px}
+#custom-row label{letter-spacing:1.5px}
+#custom-row .btn-save-preset{margin-left:auto}
+@media (max-width:420px){#custom-row .btn-save-preset{margin-left:0;width:100%}}
+
+.combo{position:relative}
+.combo .field-input{padding-right:42px;text-overflow:ellipsis}
+.combo-btn{position:absolute;right:0;top:0;bottom:0;width:40px;background:none;border:0;color:var(--muted2);font-size:14px;cursor:pointer;transition:transform var(--dur-fast),color var(--dur-fast)}
+.combo-btn:hover{color:var(--amber)}
+.combo[data-open="1"] .combo-btn{transform:rotate(180deg);color:var(--amber)}
+.combo-list{position:absolute;z-index:40;left:0;right:0;top:calc(100% + 4px);max-height:min(300px,45vh);overflow-y:auto;margin:0;padding:4px 0;list-style:none;background:var(--surf);border:1px solid var(--bdr2);border-radius:10px;box-shadow:0 14px 34px -12px rgba(0,0,0,.45)}
+.combo-grp{padding:8px 14px 4px;font:600 10px var(--mono);letter-spacing:1.6px;text-transform:uppercase;color:var(--muted)}
+.combo-opt{padding:9px 14px;font-size:14px;color:var(--txt2);cursor:pointer;line-height:1.35}
+.combo-opt.cur{font-weight:600;color:var(--txt)}
+.combo-opt.act{background:var(--amber-lo);color:var(--amber)}
+.combo-opt[aria-disabled="true"]{opacity:.45;cursor:not-allowed}
+.combo-none{padding:10px 14px;font-size:13px;color:var(--muted2);line-height:1.4}
+
+/* Pomodoro setup: compact */
+.pomo-tools{display:flex;gap:14px;align-items:baseline}
+.pomo-presets{gap:6px;margin-bottom:10px}
+.pomo-presets .dur-pill{padding:2px}
+.pomo-presets .dur-pill>.pomo-preset-btn{padding:5px 12px;font-size:13px}
+.pomo-presets .dur-pill>.chip-x{margin:0 2px 0 -4px;opacity:1}
+.pomo-sub-row{margin:0 0 10px}
+.pomo-sub{padding:7px 6px;font-size:11px;letter-spacing:1.5px}
+.pomo-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.pomo-field{gap:4px;min-width:0}
+.pomo-label{font-size:10.5px;letter-spacing:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pomo-row .num-in{width:100%;box-sizing:border-box;padding:6px 8px;font-size:15px;text-align:center}
+.pomo-save-row{margin-top:10px}
+.pomo-save-row .btn-save-preset{padding:6px 12px}
+.pomo-save-row:has(#pomo-save[hidden]){display:none}
+#pomo-save[hidden]{display:none}
+.pomo-total-preview{margin:10px 0 18px}
+.seq-hint{font-size:11.5px;margin-bottom:6px;line-height:1.4}
+.seq-list{gap:4px;margin-bottom:8px}
+.seq-row{padding:4px 8px;gap:6px}
+.seq-type{padding:5px 0}
+.seq-min{width:58px;padding:4px 6px;font-size:14px}
+.seq-ic{width:26px;height:26px}
+.seq-actions{gap:6px}
+.seq-actions .btn-save-preset{padding:5px 12px}
+@media (max-width:420px){.pomo-label{font-size:9.5px;letter-spacing:.5px}.pomo-row{gap:6px}.pomo-row .num-in{padding:6px 4px}}
+
+/* Tasks: quick-add row appears once a box has a task */
+@keyframes inline-in{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+.inline-add.fade-in{animation:inline-in .35s ease both}
+@media (prefers-reduced-motion:reduce){.inline-add.fade-in{animation:none}}
+
+/* Tasks: each letter gets its own colour on header, body, rows and checkbox */
+.sec:is([data-t="A"],[data-t="B"],[data-t="C"],[data-t="D"],[data-t="E"]){background:color-mix(in srgb,var(--priority-color) 7%,var(--surf2))}
+.sec:is([data-t="A"],[data-t="B"],[data-t="C"],[data-t="D"],[data-t="E"]) .sec-hdr{background:color-mix(in srgb,var(--priority-color) 16%,var(--surf2))}
+.sec:is([data-t="A"],[data-t="B"],[data-t="C"],[data-t="D"],[data-t="E"]) .ti{background:color-mix(in srgb,var(--priority-color) 10%,var(--surf));border-color:color-mix(in srgb,var(--priority-color) 22%,transparent);border-left:4px solid var(--priority-color)}
+.sec:is([data-t="A"],[data-t="B"],[data-t="C"],[data-t="D"],[data-t="E"]) .ti:hover{background:color-mix(in srgb,var(--priority-color) 17%,var(--surf))}
+.sec:is([data-t="A"],[data-t="B"],[data-t="C"],[data-t="D"],[data-t="E"]) .t-chk{border-color:color-mix(in srgb,var(--priority-color) 60%,var(--bdr2))}
+.sec:is([data-t="A"],[data-t="B"],[data-t="C"],[data-t="D"],[data-t="E"]) .inline-in{border-color:color-mix(in srgb,var(--priority-color) 45%,var(--bdr2))}
+.sec:is([data-t="A"],[data-t="B"],[data-t="C"],[data-t="D"],[data-t="E"]) .inline-in::placeholder{color:var(--muted2)}
+
+/* Tasks: the "not sorted yet" notice must be impossible to miss */
+#ux-unsorted{margin:10px 0 14px;padding:11px 14px 11px 12px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;border-radius:12px;background:var(--txt);color:var(--bg);box-shadow:0 8px 20px -10px rgba(0,0,0,.55)}
+.ux-unsorted-n{flex:none;min-width:28px;height:28px;padding:0 8px;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:#f2a93b;color:#2a1a08;font:700 14px var(--sans);animation:uxn-ring 1.8s ease-out 2}
+.ux-unsorted-t{font:600 15px var(--sans)}
+#ux-unsorted .ux-show-tools{margin-left:auto;padding:9px 18px!important;min-height:0;line-height:1.2;border:0;border-radius:8px;background:#f2a93b;color:#2a1a08;font:700 13px var(--sans);text-decoration:none;cursor:pointer}
+#ux-unsorted .ux-show-tools:hover,#ux-unsorted .ux-show-tools:focus-visible{background:#ffbe5c;text-decoration:none}
+@keyframes uxn-ring{0%{box-shadow:0 0 0 0 rgba(242,169,59,.7)}100%{box-shadow:0 0 0 12px rgba(242,169,59,0)}}
+@media (prefers-reduced-motion:reduce){.ux-unsorted-n{animation:none}}
+@media (max-width:480px){#ux-unsorted .ux-show-tools{margin-left:0;width:100%}}

@@ -1,0 +1,14 @@
+/* line icons instead of emoji in task rows + Details ===== */
+.task-notes-btn .i,.dep-row-lbl .i,.t-action-btn .i,.dep-badge .i,.ti-progress-pill .i,.subtask-link-chip .i,.t-btn .i,.subtask-link-btn .i{
+  width:14px;height:14px;vertical-align:-.2em;margin-right:6px;stroke-width:1.7}
+.subtask-link-btn .i{margin-right:0}
+.subtask-link-btn span{margin-left:4px;font-size:12px;font-variant-numeric:tabular-nums}
+.t-btn .i{margin-right:5px}
+.dep-badge .i,.ti-progress-pill .i{width:12px;height:12px;margin-right:4px}
+.task-notes-btn,.dep-row-lbl,.t-action-btn,.subtask-link-chip{display:inline-flex;align-items:center}
+.tour-pts kbd{font-family:var(--sans);font-size:11px;letter-spacing:.3px;padding:2px 8px;border-radius:999px}
+.subtask-panel{border-radius:12px;padding-top:6px}
+.dep-select,.subtask-in{border-radius:8px}
+.subtask-link-btn,.subtask-link-chip,.dep-badge,.ti-progress-pill{border-radius:999px}
+.subtask-chk{border-radius:5px}
+.task-notes-btn{border-radius:8px}

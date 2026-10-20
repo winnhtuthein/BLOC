@@ -1,0 +1,46 @@
+/* one "Planning" button on the date line; Habits, Fit Check, Energy live in its drawer ===== */
+#ux-habits-today{display:none!important}
+#view-tasks .tools-seg{display:none!important}               /* the old "Planning tools ▾" toggle is replaced */
+#tasks-banner{margin:0 auto!important;padding-top:0!important}
+#tasks-banner:has(#tracy-insight-tasks:not(:empty)){margin:12px auto 0!important}
+
+.planning-bar{position:relative;display:flex;align-items:center;margin:0 0 0 auto;padding-right:14px}
+.planning-bar::after{content:"";position:absolute;right:0;top:50%;height:22px;width:1px;transform:translateY(-50%);background:var(--bdr2)}   /* clear divider before Top priorities */
+.date-bar .filter-seg[aria-label="Filter tasks"]{margin-left:2px}
+.planning-src{display:none!important}
+
+.planning-btn{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 10px 0 12px;box-sizing:border-box;cursor:pointer;
+  font:600 13.5px var(--sans);letter-spacing:0;color:var(--txt);background:var(--surf2);border:1px solid var(--bdr2);border-radius:999px;
+  transition:border-color .15s,background .15s,box-shadow .15s}
+.planning-btn:hover,.planning-open .planning-btn{border-color:var(--amber);background:var(--amber-lo)}
+.planning-btn:focus-visible{outline:none;box-shadow:0 0 0 3px var(--amber-lo),inset 0 0 0 1px var(--amber)}
+.planning-btn .i{width:16px;height:16px;stroke-width:1.8}
+.planning-btn-ic{display:inline-flex;color:var(--amber)}
+.planning-btn-chev{display:inline-flex;color:var(--muted);transition:transform .18s}
+.planning-open .planning-btn-chev{transform:rotate(180deg)}
+.planning-badge{min-width:18px;height:18px;padding:0 5px;box-sizing:border-box;border-radius:9px;background:var(--green);color:#fff;font:700 11px/18px var(--sans);text-align:center}
+.planning-badge[hidden]{display:none}
+
+.planning-drawer{position:absolute;top:calc(100% + 10px);right:14px;width:320px;max-width:calc(100vw - 32px);box-sizing:border-box;z-index:70;
+  padding:6px;border-radius:16px;background:var(--surf);border:1px solid var(--bdr2);box-shadow:0 18px 44px -16px rgba(0,0,0,.45)}
+.planning-drawer[hidden]{display:none}
+.planning-row{display:flex;align-items:center;gap:12px;width:100%;box-sizing:border-box;padding:10px;border:0;border-radius:11px;background:none;cursor:pointer;text-align:left;color:var(--txt);font-family:var(--sans)}
+.planning-row+.planning-row{margin-top:2px}
+.planning-row:hover,.planning-row:focus-visible{outline:none;background:var(--amber-lo)}
+.planning-row-ic{flex:none;display:grid;place-items:center;width:34px;height:34px}
+.planning-circ{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;border:1px solid var(--bdr2);background:var(--surf2);color:var(--amber)}
+.planning-circ .i{width:16px;height:16px;stroke-width:1.7}
+.planning-row-txt{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.planning-row-t{font:600 14px/1.25 var(--sans)}
+.planning-row-s{font:400 12.5px/1.35 var(--sans);color:var(--muted2)}
+.planning-row-r{flex:none;display:inline-flex;align-items:center;gap:5px;font:600 12.5px var(--sans);color:var(--green)}
+.planning-row-r .i{width:14px;height:14px;stroke-width:2}
+.planning-hrow{background:color-mix(in srgb,var(--green) 9%,transparent)}
+.planning-hrow:hover{background:color-mix(in srgb,var(--green) 16%,transparent)}
+.planning-ring{width:34px;height:34px;color:var(--green)}
+.planning-ring-bg{fill:color-mix(in srgb,var(--green) 8%,transparent);stroke:color-mix(in srgb,var(--green) 22%,transparent);stroke-width:3}
+.planning-ring-fg{fill:none;stroke:var(--green);stroke-width:3;stroke-linecap:round}
+.planning-ring-ic{color:var(--green)}.planning-ring-ic use{fill:none;stroke:currentColor}
+.planning-hrow.planning-rest{background:none}.planning-hrow.planning-rest .planning-ring,.planning-hrow.planning-rest .planning-ring-ic{color:var(--muted)}
+
+@media (max-width:760px){.planning-drawer{position:fixed;left:16px;right:16px;top:auto;width:auto;max-width:none;bottom:84px}}

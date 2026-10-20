@@ -1,0 +1,39 @@
+/* calmer "unsorted" notice + two date pickers with clear hierarchy ===== */
+
+/* 1) Unsorted notice: a quiet inline note instead of a loud dark banner */
+#ux-unsorted{margin:6px 0 12px;padding:7px 8px 7px 12px;gap:10px;border-radius:10px;
+  background:color-mix(in srgb,var(--amber) 7%,transparent);
+  border:1px solid color-mix(in srgb,var(--amber) 20%,var(--bdr));
+  color:var(--txt2);box-shadow:none}
+.ux-unsorted-n{min-width:20px;height:20px;padding:0 6px;background:color-mix(in srgb,var(--amber) 20%,transparent);
+  color:var(--amber);font:600 12px var(--sans);animation:none}
+.ux-unsorted-t{font:400 13px var(--sans);color:var(--txt2)}
+#ux-unsorted .ux-show-tools{margin-left:auto;padding:4px 10px!important;border-radius:6px;background:transparent;
+  color:var(--amber);font:600 13px var(--sans);text-decoration:none}
+#ux-unsorted .ux-show-tools:hover,#ux-unsorted .ux-show-tools:focus-visible{background:color-mix(in srgb,var(--amber) 14%,transparent);text-decoration:none}
+@media (max-width:480px){#ux-unsorted .ux-show-tools{margin-left:auto;width:auto}}
+
+/* 2a) PRIMARY picker (top add bar): solid, raised segmented control with a filled active pill */
+.plan-target{padding:3px;gap:2px;border:0;border-radius:10px;background:var(--surf3);overflow:hidden;
+  box-shadow:inset 0 0 0 1px var(--bdr2)}
+.plan-target .pt-indicator{top:3px;bottom:3px;border:0;border-radius:7px;background:var(--amber);
+  box-shadow:0 2px 6px -2px var(--amber-glo)}
+.plan-target .pt-btn{border-radius:7px;padding:0 14px;min-height:30px;font-weight:600;color:var(--txt2)}
+.plan-target .pt-btn+.pt-btn{border-left:0}
+.plan-target .pt-btn:hover{color:var(--txt)}
+.plan-target .pt-btn.on{color:var(--bg);font-weight:700}
+
+/* 2b) SECONDARY picker (per-section quick-add): borderless, text-only, whisper-quiet */
+.sec-when{border:0;background:none;align-items:center;gap:2px}
+.sec-when::before{content:"Plan for";flex:none;margin-right:4px;font:500 11px var(--sans);color:var(--muted);letter-spacing:.2px}
+.sec-when .sw-btn{min-height:26px;padding:0 8px;border-radius:999px;font:500 12px var(--sans);letter-spacing:0;color:var(--muted)}
+.sec-when .sw-btn+.sw-btn{border-left:0}
+.sec-when .sw-btn:hover{color:var(--txt2);background:color-mix(in srgb,var(--txt) 6%,transparent)}
+.sec-when .sw-btn.on{box-shadow:none;background:color-mix(in srgb,var(--sc,var(--amber)) 11%,transparent);
+  color:color-mix(in srgb,var(--sc,var(--amber)) 75%,var(--txt));font-weight:600}
+@media (max-width:760px){
+  .sec-when{flex:1 1 100%;border-radius:0;overflow:visible}
+  .sec-when .sw-btn{min-height:36px;flex:1;justify-content:center}
+  .sec-when::before{display:none}
+  .plan-target .pt-btn{min-height:42px}
+}

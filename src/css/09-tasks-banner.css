@@ -1,0 +1,26 @@
+/* Tasks: one banner, clearer active tab (top add bar kept) */
+
+/* 1. Banner: quote + library link + planning tools in one card, aligned to the task column */
+.tasks-banner{max-width:860px;margin:14px auto 16px;padding:0 32px;box-sizing:border-box}
+.tasks-banner[hidden]{display:none!important}
+.tasks-card{background:var(--surf2);border:1px solid var(--bdr);border-radius:12px;overflow:hidden}
+.tasks-card .tracy-strip{padding:11px 16px;margin:0;border:0;border-radius:0;background:none;box-shadow:none}
+.tasks-card #tracy-insight-tasks:empty{display:none}
+.tasks-card .task-toolbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:10px 16px;margin:0;border:0;border-top:1px solid var(--bdr);background:color-mix(in srgb,var(--surf3) 55%,transparent)}
+.tasks-card .task-toolbar .tt-divider{display:none}
+.tasks-tools-lbl{font:600 10px var(--mono);letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);margin-right:4px}
+.tasks-hide{margin-left:auto;background:none;border:0;padding:6px 2px;color:var(--amber);font:500 12px var(--sans);cursor:pointer;white-space:nowrap}
+.tasks-hide:hover{text-decoration:underline}
+/* opener lives with the filters only while the tools are closed; Hide lives inside the banner */
+body:not(.ux-lean) #view-tasks .tools-seg{display:none}
+@media (max-width:640px){.tasks-banner{padding:0 16px}.tasks-card .tracy-strip{padding:10px 12px}.tasks-card .task-toolbar{padding:8px 12px}.tasks-tools-lbl{width:100%}}
+
+/* 2. Active tab: filled tint + accent border + underline bar, bolder label */
+@media (min-width:641px){
+  body .hdr-nav .nav-btn[data-navkey].active,body.focus-mode .hdr-nav .nav-btn[data-navkey].active{
+    background:color-mix(in srgb,var(--accent,var(--amber)) 20%,var(--surf))!important;
+    border-color:var(--accent,var(--amber))!important;color:var(--accent,var(--amber));font-weight:700;
+    box-shadow:inset 0 -3px 0 var(--accent,var(--amber))!important}
+  body .hdr-nav .nav-btn[data-navkey]:not(.active){opacity:.88}
+  body .hdr-nav .nav-btn[data-navkey]:not(.active):hover{opacity:1}
+}

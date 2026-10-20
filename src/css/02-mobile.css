@@ -1,0 +1,45 @@
+/* ===== Calm view on phones: one job per screen, thumb-first, progressive disclosure ===== */
+@media (max-width:640px){
+  /* Header: logo + mode switch only. Everything else lives in Settings or the tab bar. */
+  body.focus-mode .streak-badge,body.focus-mode .trophy-badge{display:none;}
+  body.focus-mode .mode-switch{transform:scale(.92);transform-origin:right center;}
+
+  /* Breathing room: 20px gutters, 24px between blocks */
+  body.focus-mode .tasks-wrap{padding-left:20px;padding-right:20px;}
+  body.focus-mode .sections{gap:24px;}
+
+  /* Add bar: one line to type, one big thumb button, extras tucked away until focus */
+  body.focus-mode .add-form{margin:20px 0 24px;}
+  body.focus-mode .add-form:not(:focus-within) .type-sel,
+  body.focus-mode .add-form:not(:focus-within) .plan-target{display:none;}
+  body.focus-mode .add-form:focus-within .type-sel,
+  body.focus-mode .add-form:focus-within .plan-target{animation:calmReveal .18s ease both;}
+  @keyframes calmReveal{from{opacity:0;transform:translateY(-4px);}to{opacity:1;transform:none;}}
+
+  /* Category cards: name + count only. Explanations live behind the ? button (opens the rulebook). */
+  body.focus-mode .sec-desc,body.focus-mode .sec-eg{display:none;}
+  body.focus-mode .sec-hdr{min-height:68px;padding:16px;}
+  body.focus-mode .sec-name{font-size:17px;}
+
+  /* Rows: bigger checkbox, quiet metadata. Secondary chips appear only when a row is open. */
+  body.focus-mode .ti{padding:14px;}
+  body.focus-mode .t-chk{width:30px;height:30px;}
+  body.focus-mode .t-est,body.focus-mode .t-recur,body.focus-mode .t-expand{opacity:.7;}
+
+  /* Quick-add inside a card stays collapsed until the card is tapped */
+  body.focus-mode .inline-add{padding-top:2px;}
+
+  /* Bottom actions are tucked into Settings in Calm; keep the screen about the tasks */
+  body.focus-mode .btm-bar{display:none;}
+
+  /* "I'm studying" becomes a thumb-zone pill that clears the tab bar */
+  body.focus-mode .js-fab{left:50%;transform:translateX(-50%) scale(1);opacity:1;
+    bottom:calc(var(--bottom-gap) + 16px);min-height:52px;padding:0 24px;}
+
+  /* Tab bar: 4 big targets, icon above label, no scroll */
+  body.focus-mode .hdr-nav .nav-btn{flex:1 1 0;min-width:0;}
+}
+@media (prefers-reduced-motion:reduce){
+  body.focus-mode .add-form:focus-within .type-sel,
+  body.focus-mode .add-form:focus-within .plan-target{animation:none;}
+}

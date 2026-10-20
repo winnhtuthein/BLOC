@@ -1,0 +1,81 @@
+/* calendar toolbar consolidation, streak stat, short-event polish */
+
+/* ---------- 1. Calendar sub-bar: two zones, one row ---------- */
+.cal-topbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px 16px;padding:14px 0 10px;}
+.cal-sub-left{display:flex;align-items:center;gap:12px;flex:1 1 auto;min-width:0;}
+.cal-sub-right{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end;margin-left:auto;}
+.cal-topbar .cal-title{flex:0 1 auto;min-width:0;font-size:20px;letter-spacing:1.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.cal-topbar .cal-nav-btns{align-items:stretch;}
+/* one control height across the whole bar */
+.cal-topbar .cal-nav-btn,.cal-topbar .cal-mode-btn,.cal-topbar .cal-add-btn{height:34px;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;gap:6px;line-height:1;}
+.cal-topbar .cal-mode-tog{height:34px;box-sizing:border-box;}
+.cal-topbar .cal-mode-btn{height:32px;}
+.cal-topbar .cal-nav-btn svg.i{width:14px;height:14px;flex:none;}
+
+/* "jump to now" crosshair: icon only, sits in the date-navigation group */
+.cal-now-btn{padding:0 9px!important;}
+.cal-now-btn[hidden]{display:none!important;}
+.cal-now-btn:hover{color:var(--now,var(--amber));border-color:var(--now,var(--amber));}
+
+/* + Event: secondary (outline). The filled amber button is reserved for the global + Add. */
+.cal-topbar .cal-add-btn{background:transparent;color:var(--amber);border:1px solid var(--amber);box-shadow:none;font:600 12px var(--mono);letter-spacing:2px;padding:0 14px;text-transform:uppercase;}
+.cal-topbar .cal-add-btn:hover{background:var(--amber-lo);box-shadow:none;color:var(--amber);}
+.cal-topbar .cal-add-btn:focus-visible,.cal-topbar .cal-nav-btn:focus-visible,.cal-topbar .cal-mode-btn:focus-visible{outline:2px solid var(--amber);outline-offset:2px;}
+
+/* reminders: icon + short state label */
+.cal-notif-btn[data-state="on"]{color:var(--life,var(--amber));border-color:var(--life,var(--amber));}
+.cal-notif-btn[data-state="denied"]{color:var(--muted);border-style:dashed;}
+.cal-topbar .cal-notif-btn,.cal-topbar .cal-life-btn,.cal-topbar .cal-canvas-btn{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;}
+
+/* Canvas styling menu (Background + Palette) */
+.cal-canvas-wrap{position:relative;}
+.cal-canvas-menu{position:absolute;right:0;top:calc(100% + 6px);min-width:210px;background:var(--surf);border:1px solid var(--bdr2);border-radius:10px;padding:6px;box-shadow:0 12px 32px rgba(0,0,0,.35);z-index:60;display:none;}
+.cal-canvas-menu.open{display:block;}
+.cal-canvas-menu button{display:flex;width:100%;align-items:center;gap:10px;background:none;border:0;color:var(--txt);padding:10px 12px;border-radius:6px;font:400 14px var(--sans);cursor:pointer;text-align:left;}
+.cal-canvas-menu button:hover,.cal-canvas-menu button:focus-visible{background:var(--surf3);}
+.cal-canvas-menu svg.i{width:16px;height:16px;color:var(--muted);flex:none;}
+.cal-canvas-menu .cm-sub{display:block;font-size:12px;color:var(--muted);margin-top:1px;}
+
+/* Actual-time legend now lives under the sidebar: a quiet key, not a control */
+.cal-sidebar .cal-legend-actual{margin-top:18px;padding-top:12px;border-top:1px solid var(--bdr);font-size:10px;line-height:1.5;text-transform:none;letter-spacing:.3px;align-items:flex-start;}
+.cal-sidebar .cal-legend-actual .swatch{margin-top:2px;flex:none;}
+
+/* ---------- 2. Streak: a stat readout, not a button ---------- */
+.streak-badge{border:0!important;background:transparent!important;box-shadow:none!important;border-radius:0!important;cursor:default;padding:2px 0 2px 14px!important;margin-left:4px;border-left:1px solid var(--bdr2)!important;gap:6px;font-size:12px;color:var(--amber);}
+.streak-badge:hover{box-shadow:none!important;}
+.streak-badge #streak-num{font:700 16px var(--mono);line-height:1;color:var(--amber);}
+.streak-badge.cold,.streak-badge.cold #streak-num{color:var(--muted);}
+.streak-badge .streak-fire,.streak-badge svg{width:16px;height:16px;}
+
+/* ---------- 3. Calendar blocks: breathing room, short events stay readable ---------- */
+.cal-block{padding-top:6px;container-type:inline-size;}
+.cal-block.sm{padding:0 24px 0 9px;display:flex;align-items:center;gap:8px;}
+.cal-block.sm .cal-block-title{flex:0 1 auto;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.2;}
+.cal-block.sm .cal-block-time{flex:none;margin:0;white-space:nowrap;line-height:1.2;}
+.cal-block.sm .cal-block-chk{top:50%;transform:translateY(-50%);}
+.cal-block.sm .cal-block-link{display:none;}
+@container (max-width:150px){.cal-block.sm .cal-block-time{display:none;}}
+
+/* ---------- 4. Phones ---------- */
+/* medium desktops: icon-only Reminders/Canvas so the whole bar stays on one row */
+@media (min-width:641px) and (max-width:1240px){
+  .cal-sub-right .lbl-opt{display:none;}
+  .cal-topbar .cal-notif-btn,.cal-topbar .cal-canvas-btn{padding:0 10px;}
+}
+@media (max-width:640px){
+  .cal-topbar{gap:8px;padding:10px 0 8px;}
+  /* title + view toggle share row 1; date nav row 2; actions row 3 */
+  .cal-sub-left{display:contents;}
+  .cal-topbar .cal-title{order:1;flex:1 1 0;min-width:0;font-size:18px;}
+  .cal-topbar .cal-mode-tog{order:2;}
+  .cal-topbar .cal-nav-btns{order:3;flex:1 1 100%;}
+  .cal-topbar .prime-time-badge{order:4;}
+  .cal-sub-right{order:5;}
+  .cal-topbar .cal-nav-btn,.cal-topbar .cal-mode-btn,.cal-topbar .cal-add-btn{height:44px;min-width:44px;}
+  .cal-topbar .cal-mode-tog{height:44px;}
+  .cal-topbar .cal-mode-btn{height:42px;}
+  .cal-sub-right{width:100%;justify-content:space-between;}
+  .cal-sub-right .lbl-opt{display:none;}
+  .cal-streak-free{display:none;}
+}
+@media (forced-colors:active){.cal-topbar .cal-add-btn,.cal-canvas-menu{border:1px solid ButtonText;}}

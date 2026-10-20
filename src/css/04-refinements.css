@@ -1,0 +1,86 @@
+/* refinement layer */
+:root{--pd:#9a8ff0;--pd-ink:#9a8ff0;--muted:#a59680;--muted2:#b5a897;}
+body[class]{--muted:color-mix(in srgb,var(--txt2) 88%,var(--bg));}
+/* header: 4 things — logo+streak, tabs, Add, More */
+#guide-btn,#rulebook-btn,#log-btn,#focus-habits-btn,#focus-mode-btn,#settings-gear-btn,#trophy-badge{display:none!important}
+.ux-add{display:inline-flex;align-items:center;gap:6px;background:var(--amber);color:#1a1205;border:0;border-radius:var(--r-md,8px);padding:0 14px;min-height:36px;font:600 13px var(--sans);cursor:pointer}
+.ux-more-wrap{position:relative}
+.ux-more-btn{min-height:36px;min-width:36px;padding:0 12px;background:var(--surf2);color:var(--txt);border:1px solid var(--bdr2);border-radius:var(--r-md,8px);font:500 13px var(--sans);cursor:pointer}
+.ux-menu{position:absolute;right:0;top:calc(100% + 6px);min-width:230px;background:var(--surf);border:1px solid var(--bdr2);border-radius:10px;padding:6px;box-shadow:0 12px 32px rgba(0,0,0,.45);z-index:900;display:none}
+.ux-menu.open{display:block}
+.ux-menu button,.ux-menu .ux-seg{display:flex;width:100%;align-items:center;gap:8px;text-align:left;background:none;border:0;color:var(--txt);padding:10px 12px;border-radius:6px;font:400 14px var(--sans);cursor:pointer}
+.ux-menu button:hover,.ux-menu button:focus-visible{background:var(--surf3)}
+.ux-menu hr{border:0;border-top:1px solid var(--bdr);margin:4px 0}
+.ux-menu .ux-lbl{font:500 12px var(--sans);color:var(--muted);padding:6px 12px 2px}
+.ux-seg{gap:6px!important}
+.ux-seg button{flex:1;justify-content:center;border:1px solid var(--bdr2)!important;padding:8px!important}
+.ux-seg button[aria-pressed=true]{background:var(--amber);color:#1a1205;border-color:var(--amber)!important}
+.streak-badge{white-space:nowrap}
+/* phone: 4 tabs + More sheet */
+.ux-tabmore{display:none}
+.ux-sheet{position:fixed;left:0;right:0;bottom:calc(64px + env(safe-area-inset-bottom));background:var(--surf);border-top:1px solid var(--bdr2);border-radius:14px 14px 0 0;padding:12px;z-index:1000;display:none;box-shadow:0 -12px 40px rgba(0,0,0,.5)}
+.ux-sheet.open{display:block}
+.ux-sheet button{display:flex;width:100%;min-height:48px;align-items:center;gap:12px;background:none;border:0;color:var(--txt);font:400 16px var(--sans);padding:0 12px;border-radius:8px;text-align:left}
+.ux-sheet button:active{background:var(--surf3)}
+@media (max-width:640px){
+  body.ux-phone .hdr-nav .nav-btn.ux-overflow{display:none!important}
+  body.ux-phone .hdr-nav .nav-btn .nav-lbl{display:block!important;font-size:12px!important}
+  .ux-tabmore{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;background:none;border:0;color:var(--txt2);font:500 12px var(--sans);min-width:0;flex:1}
+  .ux-add .ux-add-t{display:none}
+  .ux-more-btn .ux-more-t{display:none}
+}
+/* consultant FAB must not cover quick chips */
+@media (max-width:640px){#bai-fab{left:12px!important;right:auto!important;top:auto!important;bottom:calc(76px + env(safe-area-inset-bottom))!important}}
+/* quick-capture */
+.qc-type{min-width:150px}
+/* accessibility */
+:where(button,[role=button],[role=checkbox],[tabindex],select,input,a):focus-visible{outline:2px solid var(--amber)!important;outline-offset:2px}
+@media (pointer:coarse){
+  button,.btn,.chip,select,.nav-btn,.panel-close,[role=button],[role=checkbox]{min-height:44px;min-width:44px}
+  .t-chk{min-width:44px;min-height:44px}
+}
+.t-chk[role=checkbox]{cursor:pointer}
+.panel-close{cursor:pointer;padding:12px 14px;font-size:13px}
+@media (prefers-contrast:more){:root{--muted:#d4c8b2;--muted2:#e0d6c3;--bdr:#8a7d68;--bdr2:#a89a82}}
+@media (forced-colors:active){.ux-add,.ux-more-btn,.ux-menu{border:1px solid ButtonText}.ux-seg button[aria-pressed=true]{outline:2px solid Highlight}}
+/* Tasks: progressive disclosure */
+body.ux-lean #score-wrap,body.ux-lean .fit-toolbar,body.ux-lean #mit-widget{display:none}
+.ux-show-tools{background:none;border:0;color:var(--amber);font:500 13px var(--sans);text-decoration:underline;cursor:pointer;padding:8px 0}
+/* habits today strip */
+#ux-habits-today{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:8px 0;font:400 13px var(--sans);color:var(--txt2)}
+#ux-habits-today .ux-hchip{background:var(--surf2);border:1px solid var(--bdr2);border-radius:999px;padding:4px 12px;color:var(--txt);cursor:pointer}
+
+/* ---- stable header: same labelled pills in every mode, 4 tabs + More ---- */
+.hdr-nav .nav-btn.ux-overflow{display:none!important}
+.hdr-nav{overflow:visible!important}
+@media (min-width:641px){
+  body .hdr-nav,body.focus-mode .hdr-nav{gap:6px;padding:0;background:transparent;border-color:transparent}
+  body .hdr-nav .nav-btn[data-navkey],body.focus-mode .hdr-nav .nav-btn[data-navkey],body.nav-tight .hdr-nav .nav-btn[data-navkey]{
+    border-radius:999px;min-width:0;min-height:36px;padding:8px 14px;justify-content:flex-start;border:1px solid var(--bdr2);background:var(--surf)}
+  body .hdr-nav .nav-btn[data-navkey] .nav-lbl,body.focus-mode .hdr-nav .nav-btn[data-navkey] .nav-lbl,body.nav-tight .hdr-nav .nav-btn[data-navkey]:not(.active) .nav-lbl{display:inline!important;font-size:12px}
+  body .hdr-nav .nav-btn[data-navkey] .nav-ico,body.focus-mode .hdr-nav .nav-btn[data-navkey] .nav-ico{width:16px;height:16px;margin:0}
+  body .hdr-nav .nav-btn[data-navkey].active{border-color:var(--accent,var(--amber))}
+}
+.hdr-right{gap:10px;flex-wrap:nowrap;min-width:0}
+.ux-add,.ux-more-wrap{flex-shrink:0}
+.ux-more-btn{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;flex-direction:row}
+.ux-menu .ux-tabs-sec{display:block}
+@media (max-width:640px){.ux-menu .ux-tabs-sec{display:none}}
+#ux-habits-today{margin-top:14px!important;padding:8px 12px!important;font-size:13px!important}
+.ux-show-tools{padding:2px 0 10px!important}
+@media (min-width:641px){body .hdr-nav .nav-btn[data-navkey].active,body.focus-mode .hdr-nav .nav-btn[data-navkey].active{box-shadow:none!important;border-width:1px;border-color:var(--tab-c,var(--amber))}}
+#ux-appearance .settings-field{margin-top:16px}
+body.focus-mode #ux-show-tools{display:none!important}
+
+/* habits tips: quiet, collapsed by default */
+details.hb-howto{margin-top:14px;padding:0;border:0;border-radius:0}
+details.hb-howto>summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:6px;padding:8px 0;min-height:36px;font:500 13px var(--sans);color:var(--muted2)}
+details.hb-howto>summary::-webkit-details-marker{display:none}
+details.hb-howto>summary::before{content:'\25B8';font-size:11px;transition:transform .15s}
+details.hb-howto[open]>summary::before{transform:rotate(90deg)}
+details.hb-howto>summary:hover{color:var(--txt)}
+details.hb-howto ul{margin:4px 0 8px;padding:0 0 0 18px;font:400 13px/1.6 var(--sans);color:var(--muted2);max-width:560px}
+details.hb-howto li{margin:4px 0}
+details.hb-howto b{color:var(--txt2);font-weight:600}
+details.hb-howto .hb-howto-link{font:500 13px var(--sans);letter-spacing:0;margin:0 0 0 18px;text-decoration:underline}
+@media (prefers-reduced-motion:reduce){details.hb-howto>summary::before{transition:none}}

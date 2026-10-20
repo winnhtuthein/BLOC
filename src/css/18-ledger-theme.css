@@ -1,0 +1,5 @@
+/* More menu text was washed out on the Ledger theme.
+   Ledger forces light text vars on everything inside .hdr (it assumes a dark header),
+   but the More button and its dropdown sit on light surfaces. Keep dark ink there. */
+html[data-theme="ledger"] .ux-more-wrap,
+html[data-theme="ledger"] .ux-more-wrap *{--txt:#241a0e;--txt2:#4a3722;}

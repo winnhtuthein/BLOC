@@ -1,0 +1,20 @@
+.simple-view-row{display:none;}
+.simple-view-row button{background:none;border:none;color:var(--amber);cursor:pointer;font:inherit;font-weight:600;padding:8px 4px;}
+.simple-view-row button:hover,.simple-view-row button:focus-visible{text-decoration:underline;}
+.simple-view-row .phone-only{display:none;}
+.empty-nudge{opacity:1;display:flex;flex-direction:column;gap:6px;align-items:center;text-align:center;padding:22px 16px;font-size:15px;letter-spacing:.3px;text-transform:none;color:var(--txt);font-weight:600;}
+.empty-nudge span{font-size:12px;font-weight:400;color:var(--muted2,var(--muted));letter-spacing:.2px;}
+@media (max-width:640px){
+  /* Cleaner phone header and a more compact add form (borrowed idea: one input + one button, thumb-friendly) */
+  body.focus-mode .simple-view-row{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:4px 14px;margin:-4px 0 16px;font-family:var(--sans);font-size:13px;}
+  body.focus-mode .simple-view-row .phone-only{display:inline-block;}
+  body.focus-mode .guide-btn,body.focus-mode .rulebook-btn,body.focus-mode .log-btn,body.focus-mode .focus-habits-btn{display:none!important;}
+  .add-form{gap:8px;margin:14px 0 12px;}
+  .add-input{flex:1 1 calc(100% - 104px);min-width:0;order:1;}
+  .btn-add{flex:0 0 88px;min-height:50px;font-size:15px;padding:0 8px;order:2;}
+  .btn-add .btn-add-arrow{display:none;}
+  .type-sel{flex:0 0 42%;min-height:46px;order:3;}
+  .plan-target{flex:1 1 0;min-width:0;order:4;}
+  .pt-btn{min-height:46px;}
+  .empty-nudge{padding:18px 12px;font-size:14px;}
+}
