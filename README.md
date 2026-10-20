@@ -4,8 +4,7 @@ A daily planner that keeps tasks, focus blocks, habits and your calendar in one 
 
 **Live:** [yitbloc.site](https://yitbloc.site)
 
-<!-- Add a screenshot: save it as docs/screenshot.png in this repo, then replace this line with:
-![BLOC](docs/screenshot.png) -->
+![BLOC](screenshot.png)
 
 ## What it does
 
